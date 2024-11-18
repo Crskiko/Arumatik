@@ -1,6 +1,5 @@
 import arrowIcon from "../assets/arrow-icon.svg";
 import PropTypes from "prop-types";
-import url from "../assets/plastic/medium-duty/EN4-1210.jpg";
 
 /**
  * A card component that displays product name and image.
@@ -8,14 +7,14 @@ import url from "../assets/plastic/medium-duty/EN4-1210.jpg";
  * @param {object} props - Props for the card.
  * @param {string} props.product - The object that contains `name` and `image`.
  * @param {string} props.product.name - The name of the product.
- * @param {number} props.product.image - The path URL of the product image.
+ * @param {string} props.product.image - The path URL of the product image.
  * @returns {JSX.Element} The product card component.
  */
 function CardProduct({ product }) {
   return (
     <div className="flex flex-col items-center justify-center w-fit bg-white p-6 rounded-3xl shadow-sm">
       <img
-        src={url}
+        src={product.image}
         alt={product.name}
         className="w-80 h-48 overflow-hidden rounded-2xl mb-4"
       />
@@ -37,7 +36,8 @@ function CardProduct({ product }) {
 
 CardProduct.propTypes = {
   product: PropTypes.shape({
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }).isRequired
 }
 
