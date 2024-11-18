@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 /**
- * A hook to fetch data from JSON files converted to JS objects.
+ * A hook to fetch data from JSON files converted to JS arrays.
  *
  * @param {string} file - The intended JSON file name.
- * @returns {{ data: object; loading: boolean; error: string; }} - The data, loading and error status.
+ * @returns {{ data: any; loading: boolean; error: string; }} - The data, loading and error status.
  */
 const useFetch = (file) => {
   const [data, setData] = useState([]);
