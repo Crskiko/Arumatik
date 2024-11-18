@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
-import ButtonPrimary from "./Button";
-import logo from "/logo.svg";
+import Logo from "../assets/logo.svg";
+import Button from "./Button";
 
 /**
- *  A header component that displays the logo, menu options, and contact button.
+ * A navigation bar component that displays the logo, menu options, and contact button.
  *
- * @returns {JSX.Element} The header component.
+ * @returns {JSX.Element} The rendered navbar component.
  */
-function Header() {
+function Navbar() {
   return (
-    <div className="flex items-center justify-between bg-white w-screen shadow-sm py-5 px-28">
-      <img src={logo} alt="logo" />
+    <div className="fixed z-50 flex items-center justify-between bg-white w-screen shadow-sm py-5 px-28">
+      <img src={Logo} alt="logo" />
 
       <nav>
         <ul className="flex items-center gap-10">
@@ -34,13 +34,13 @@ function Header() {
         </ul>
       </nav>
 
-      <ButtonPrimary
+      <Button
         label="Contact Us"
-        action={() => window.open("https://wa.me/6281807319641", "_blank")}
+        onClick={() => window.open("https://wa.me/6281807319641", "_blank")}
         primary={true}
-      ></ButtonPrimary>
+      ></Button>
     </div>
   );
 }
 
-export default Header;
+export default Navbar;

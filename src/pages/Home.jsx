@@ -1,8 +1,12 @@
 import CardCategory from "../components/CardCategory";
-import Header from "../components/Header";
-import truck from "../assets/truck-icon.svg";
 import CardBenefit from "../components/CardBenefit";
 import CardProduct from "../components/CardProduct";
+import Navbar from "../components/Navbar";
+import Heading from "../components/Heading";
+import TruckIcon from "../assets/truck-icon.svg";
+import Footer from "../components/Footer";
+import Tab from "../components/Tab";
+import Dropdown from "../components/Dropdown";
 
 function Home() {
   const data = {
@@ -21,13 +25,19 @@ function Home() {
 
   return (
     <div>
-      <Header></Header>
+      <Navbar></Navbar>
+
+      <Heading text="About Us" desc="Trusted across Indonesia for high-quality, sustainable pallet solutions tailored to logistics and manufacturing needs."></Heading>
 
       <CardCategory name="Plastic Pallet" desc="Lightweight and durable for high-volume, easy handling." img="/sample.jpg" primary={true} reverse={true}></CardCategory>
 
-      <CardBenefit name="Local Delivery" desc="Bringing convenience right to your door." img={truck}></CardBenefit>
+      <CardBenefit name="Local Delivery" desc="Bringing convenience right to your door." img={TruckIcon}></CardBenefit>
 
       <CardProduct product={data}></CardProduct>
+
+      <Footer></Footer>
+
+      <Dropdown></Dropdown>
     </div>
   );
 }

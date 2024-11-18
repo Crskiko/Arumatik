@@ -1,4 +1,4 @@
-import arrowIcon from "../assets/arrow-icon.svg";
+import ArrowIcon from "../assets/arrow-icon.svg";
 import PropTypes from "prop-types";
 
 /**
@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {string} props.product - The object that contains `name` and `image`.
  * @param {string} props.product.name - The name of the product.
  * @param {string} props.product.image - The path URL of the product image.
- * @returns {JSX.Element} The product card component.
+ * @returns {JSX.Element} The rendered product card component.
  */
 function CardProduct({ product }) {
   return (
@@ -24,10 +24,10 @@ function CardProduct({ product }) {
 
         <div 
           className="bg-white w-8 h-8 flex items-center justify-center rounded-[50%] 
-            border-2 border-blue cursor-pointer transform transition duration-200 hover:bg-beige 
-            hover:border-beige hover:scale-110"
+          border-2 border-blue cursor-pointer transform transition duration-200 hover:bg-beige 
+          hover:border-beige hover:scale-110"
         >
-          <img src={arrowIcon} alt="arrow-icon" className="ml-[0.05rem]" />
+          <img src={ArrowIcon} alt="arrow-icon" className="ml-[0.05rem]" />
         </div>
       </div>
     </div>

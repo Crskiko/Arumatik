@@ -17,6 +17,7 @@ export default {
         blue: '#1A4F8E',
         beige: '#FDF7EB',
         black: '#303030',
+        grey: '#CDCDCD'
       },
       boxShadow: {
         'sm': '4px 4px 12px 0 rgba(0, 0, 0, 0.06)',

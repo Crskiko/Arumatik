@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
  * @param {string} props.name - The benefit displayed.
  * @param {string} props.desc - A brief description of the benefit.
  * @param {string} props.img - Path URL of the image displayed.
- * @returns {JSX.Element} The category card component.
+ * @returns {JSX.Element} The rendered category card component.
  */
 function CardBenefit({ name, desc, img }) {
   return (

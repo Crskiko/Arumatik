@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  * @param {string} props.img - Path URL of the image displayed.
  * @param {boolean} props.primary - Boolean value that determines card style.
  * @param {boolean} props.reverse - Boolean value that determines card direction.
- * @returns {JSX.Element} The category card component.
+ * @returns {JSX.Element} The rendered category card component.
  */
 function CardCategory({ name, desc, img, primary, reverse }) {
   return (
@@ -26,7 +26,7 @@ function CardCategory({ name, desc, img, primary, reverse }) {
 
       <div
         className={`${primary ? "text-white" : "text-black"} 
-          ${reverse ? "text-start" : "text-end"} w-60`}
+        ${reverse ? "text-start" : "text-end"} w-60`}
       >
         <h2 className="text-3xl font-bold mb-4">{name}</h2>
         <p className="text-base">{desc}</p>
