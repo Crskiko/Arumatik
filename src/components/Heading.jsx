@@ -10,9 +10,9 @@ import PropTypes from "prop-types";
  */
 function Heading({ text, desc }) {
   return (
-    <div className="text-center w-[578px]">
-      <h1 className="text-3xl font-bold text-blue mb-3">{text}</h1>
-      <p className="text-base">{desc}</p>
+    <div className="text-center w-[36rem]">
+      <h1 className="text-2xl font-bold text-blue mb-3">{text}</h1>
+      <p className="text-sm">{desc}</p>
     </div>
   );
 }

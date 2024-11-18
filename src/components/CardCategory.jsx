@@ -28,8 +28,8 @@ function CardCategory({ name, desc, img, primary, reverse }) {
         className={`${primary ? "text-white" : "text-black"} 
         ${reverse ? "text-start" : "text-end"} w-60`}
       >
-        <h2 className="text-3xl font-bold mb-4">{name}</h2>
-        <p className="text-base">{desc}</p>
+        <h2 className="text-2xl font-bold mb-4">{name}</h2>
+        <p className="text-sm">{desc}</p>
       </div>
     </div>
   );

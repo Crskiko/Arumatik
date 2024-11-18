@@ -20,7 +20,7 @@ function CardProduct({ product }) {
       />
 
       <div className="flex items-center justify-between w-80">
-        <h3 className="text-xl font-bold">{product.name}</h3>
+        <h3 className="text-lg font-bold">{product.name}</h3>
 
         <div 
           className="bg-white w-8 h-8 flex items-center justify-center rounded-[50%] 

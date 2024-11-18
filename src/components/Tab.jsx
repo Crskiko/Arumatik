@@ -17,9 +17,9 @@ function Tab({ name, isActive, onClick }) {
       onClick={onClick}
     >
       <h3
-        className={`${isActive ? "text-blue font-bold text-xl" : "text-lg text-grey"} 
+        className={`${isActive ? "text-blue font-bold text-lg" : "text-base text-grey"} 
         transition-all duration-500 ease-in-out group-hover:text-blue group-hover:font-bold 
-        group-hover:text-xl`}
+        group-hover:text-lg`}
       >
         {name}
       </h3>

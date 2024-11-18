@@ -10,21 +10,21 @@ import WAIcon from "../assets/wa-icon.svg";
  */
 function Footer() {
   return (
-    <div className="flex justify-between bg-white w-screen py-10 px-28">
+    <div className="flex justify-between bg-white py-10 px-28">
       <img src={Logo} alt="logo" />
 
       <div className="flex items-center justify-end gap-9">
         <div className="flex items-center gap-2">
           <img src={MailIcon} alt="mail-icon" />
-          <p className="text-sm">amrpalletplastik@gmail.com</p>
+          <p className="text-xs">amrpalletplastik@gmail.com</p>
         </div>
         <div className="flex items-center gap-2">
           <img src={PhoneIcon} alt="phone-icon" />
-          <p className="text-sm">087778914119</p>
+          <p className="text-xs">087778914119</p>
         </div>
         <div className="flex items-center gap-2">
           <img src={WAIcon} alt="wa-icon" />
-          <p className="text-sm">081807319641</p>
+          <p className="text-xs">081807319641</p>
         </div>
       </div>
     </div>

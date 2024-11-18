@@ -1,43 +1,100 @@
-import CardCategory from "../components/CardCategory";
-import CardBenefit from "../components/CardBenefit";
-import CardProduct from "../components/CardProduct";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Heading from "../components/Heading";
-import TruckIcon from "../assets/truck-icon.svg";
 import Footer from "../components/Footer";
-import Tab from "../components/Tab";
-import Dropdown from "../components/Dropdown";
+import Button from "../components/Button";
+import ArrowV2Icon from "../assets/arrow-v2-icon.svg";
+import Heading from "../components/Heading";
+import CardBenefit from "../components/CardBenefit";
 
 function Home() {
-  const data = {
-    "name": "EN4-1111",
-    "series": "Medium Duty",
-    "category": "Plastic Pallet",
-    "image": "plastic/medium-duty/EN4-1111.jpg",
-    "size": "1100 x 1100 x 150 mm",
-    "material": "PPC / HDPE",
-    "type": "Grille deck surface, Non-Reversible",
-    "color": "Blue",
-    "static_load": "4000 kg",
-    "dynamic_load": "1000 kg",
-    "racking_load": "800 kg"
-  }
+  const navigate = useNavigate();
 
   return (
     <div>
       <Navbar></Navbar>
 
-      <Heading text="About Us" desc="Trusted across Indonesia for high-quality, sustainable pallet solutions tailored to logistics and manufacturing needs."></Heading>
+      {/* Hero Section */}
+      <section id="hero" className="relative">
+        <div className="flex justify-between items-center w-full px-28">
+          <div className="w-[34rem]">
+            <h1 className="text-3xl font-bold text-blue mb-5">
+              Efficient, Sustainable Pallet Solutions for Every Need
+            </h1>
+            <p className="text-sm mb-16">
+              From logistics hubs to factories, we provide high-quality pallet
+              racks with flexible rental and purchase options, including
+              delivery and comprehensive warranties across Java.
+            </p>
+            <Button
+              label="Explore Products"
+              onClick={() => navigate("/products")}
+              primary={false}
+            ></Button>
+          </div>
 
-      <CardCategory name="Plastic Pallet" desc="Lightweight and durable for high-volume, easy handling." img="/sample.jpg" primary={true} reverse={true}></CardCategory>
+          <img
+            src="/sample.jpg"
+            alt="hero-img"
+            className="w-[26rem] h-[26rem] overflow-hidden rounded-[40px]"
+          />
+        </div>
 
-      <CardBenefit name="Local Delivery" desc="Bringing convenience right to your door." img={TruckIcon}></CardBenefit>
+        <a
+          className="bg-blue w-6 h-6 rounded-[50%] flex items-center justify-center absolute bottom-10 
+          transform transition duration-300 hover:scale-110"
+          href="#about"
+        >
+          <img src={ArrowV2Icon} alt="arrow-icon" className="ml-[0.05rem] w-4" />
+        </a>
+      </section>
 
-      <CardProduct product={data}></CardProduct>
+      {/* About Section */}
+      <section id="about" className="bg-beige">
+        <Heading
+          text="About Us"
+          desc="Trusted across Indonesia for high-quality, sustainable pallet solutions tailored 
+          to logistics and manufacturing needs."
+        ></Heading>
+
+        <div className="flex justify-center gap-8 mx-28 mt-10">
+          <div 
+            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-2xl transform 
+            transition duration-300 hover:scale-105"
+          >
+            <h3 className="text-lg font-bold mb-2">Vision</h3>
+            <p className="text-base">
+              To become Indonesia’s most advanced pallet manufacturer,
+              continually adapting to meet the evolving needs of our clients.
+            </p>
+          </div>
+          <div 
+            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-2xl transform 
+            transition duration-300 hover:scale-105"
+          >
+            <h3 className="text-lg font-bold mb-2">Mission</h3>
+            <ol className="list-decimal text-base ml-4">
+              <li>Drive innovation to lead market trends.</li>
+              <li>Stay ahead with a forward-thinking approach.</li>
+              <li>Proactively meet client needs.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefit Section */}
+      <section id="benefit">
+        <Heading
+          text="Why Choose Us"
+          desc="Experience the difference with flexible options, reliable service, and complete 
+          protection tailored to support your business growth."
+        ></Heading>
+
+        <div>
+          <CardBenefit></CardBenefit>
+        </div>
+      </section>
 
       <Footer></Footer>
-
-      <Dropdown></Dropdown>
     </div>
   );
 }

@@ -18,8 +18,8 @@ function CardBenefit({ name, desc, img }) {
       <img src={img} alt="icon" className="max-w-24 mb-5" />
 
       <div className="text-center w-60">
-        <h3 className="text-xl font-bold mb-2">{name}</h3>
-        <p className="text-base">{desc}</p>
+        <h3 className="text-lg font-bold mb-2">{name}</h3>
+        <p className="text-sm">{desc}</p>
       </div>
     </div>
   );
