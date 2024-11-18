@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {string} props.product - The object that contains `name` and `image`.
  * @param {string} props.product.name - The name of the product.
  * @param {string} props.product.image - The path URL of the product image.
- * @returns {JSX.Element} The rendered product card component.
+ * @returns {JSX.Element} - The rendered product card component.
  */
 function CardProduct({ product }) {
   return (
@@ -23,7 +23,7 @@ function CardProduct({ product }) {
         <h3 className="text-lg font-bold">{product.name}</h3>
 
         <div 
-          className="bg-white w-8 h-8 flex items-center justify-center rounded-[50%] 
+          className="bg-white w-8 h-8 flex items-center justify-center rounded-full 
           border-2 border-blue cursor-pointer transform transition duration-200 hover:bg-beige 
           hover:border-beige hover:scale-110"
         >

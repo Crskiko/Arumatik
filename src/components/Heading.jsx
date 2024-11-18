@@ -6,20 +6,22 @@ import PropTypes from "prop-types";
  * @param {object} props - Props for the texts.
  * @param {string} props.text - The displayed heading text.
  * @param {string} props.desc - The sub heading text.
- * @returns {JSX.Element} The rendered heading component.
+ * @param {boolean} prop.primary - Boolean that determines the text styling.
+ * @returns {JSX.Element} - The rendered heading component.
  */
-function Heading({ text, desc }) {
+function Heading({ text, desc, primary = true }) {
   return (
     <div className="text-center w-[36rem]">
-      <h1 className="text-2xl font-bold text-blue mb-3">{text}</h1>
-      <p className="text-sm">{desc}</p>
+      <h1 className={`${primary ? "text-blue" : "text-white"} text-2xl font-bold mb-3`}>{text}</h1>
+      <p className={`${primary ? "text-black" : "text-white"} text-sm`}>{desc}</p>
     </div>
   );
 }
 
 Heading.propTypes = {
   text: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired
+  desc: PropTypes.string.isRequired,
+  primary: PropTypes.bool
 }
 
 export default Heading;

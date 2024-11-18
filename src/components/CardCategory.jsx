@@ -9,24 +9,24 @@ import PropTypes from "prop-types";
  * @param {string} props.img - Path URL of the image displayed.
  * @param {boolean} props.primary - Boolean value that determines card style.
  * @param {boolean} props.reverse - Boolean value that determines card direction.
- * @returns {JSX.Element} The rendered category card component.
+ * @returns {JSX.Element} - The rendered category card component.
  */
 function CardCategory({ name, desc, img, primary, reverse }) {
   return (
     <div
       className={`flex ${reverse ? "flex-row-reverse pl-9" : "flex-row pr-9"} 
       ${primary ? "bg-blue shadow-xl" : "bg-beige shadow-sm"} items-center justify-between 
-      w-[592px] h-72 rounded-3xl mx-5 transform transition duration-300 hover:scale-105 cursor-pointer`}
+      w-[32rem] h-60 rounded-3xl transform transition duration-300 hover:scale-105 cursor-pointer`}
     >
       <img
         src={img}
         alt="category"
-        className={`w-64 h-72 overflow-hidden ${reverse ? "rounded-e-3xl" : "rounded-s-3xl"}`}
+        className={`w-56 h-60 overflow-hidden ${reverse ? "rounded-e-3xl" : "rounded-s-3xl"}`}
       />
 
       <div
         className={`${primary ? "text-white" : "text-black"} 
-        ${reverse ? "text-start" : "text-end"} w-60`}
+        ${reverse ? "text-start" : "text-end"} w-52`}
       >
         <h2 className="text-2xl font-bold mb-4">{name}</h2>
         <p className="text-sm">{desc}</p>

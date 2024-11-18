@@ -24,7 +24,16 @@ export default {
         'md': '4px 4px 8px 0 rgba(0, 0, 0, 0.15)',
         'lg': '4px 4px 8px 0 rgba(0, 0, 0, 0.20)',
         'xl': '4px 4px 12px 0 rgba(0, 0, 0, 0.20)',
-      }
+      },
+      keyframes: {
+        bounceSeq: {
+          '0%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-10px)' },
+        },
+      },
+      animation: {
+        'bounce-seq': 'bounceSeq 1.2s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

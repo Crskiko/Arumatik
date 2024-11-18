@@ -6,11 +6,11 @@ import WAIcon from "../assets/wa-icon.svg";
 /**
  * A footer component that displays the logo and contact information.
  *
- * @returns {JSX.Element} The rendered footer component.
+ * @returns {JSX.Element} - The rendered footer component.
  */
 function Footer() {
   return (
-    <div className="flex justify-between bg-white py-10 px-28">
+    <footer className="flex justify-between bg-white py-10 px-28">
       <img src={Logo} alt="logo" />
 
       <div className="flex items-center justify-end gap-9">
@@ -27,7 +27,7 @@ function Footer() {
           <p className="text-xs">081807319641</p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

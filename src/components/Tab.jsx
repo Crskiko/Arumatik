@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
  * @param {string} props.name - The name of the product category.
  * @param {boolean} props.isActive - Boolean value that shows tab activation statue.
  * @param {() => void} props.onClick - Callback function triggered when the tab is clicked.
- * @returns {JSX.Element} The rendered tab component.
+ * @returns {JSX.Element} - The rendered tab component.
  */
 function Tab({ name, isActive, onClick }) {
   return (
