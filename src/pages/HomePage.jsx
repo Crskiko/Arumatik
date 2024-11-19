@@ -77,8 +77,8 @@ function HomePage() {
 
         <div className="flex flex-wrap items-center justify-center gap-8 mx-28 mt-10">
           <div
-            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-3xl transform 
-            transition duration-300 hover:scale-105"
+            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-3xl cursor-default
+            transform transition duration-300 hover:scale-105"
           >
             <h3 className="text-lg font-bold mb-2">Vision</h3>
             <p className="text-base">
@@ -87,8 +87,8 @@ function HomePage() {
             </p>
           </div>
           <div
-            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-3xl transform 
-            transition duration-300 hover:scale-105"
+            className="bg-white shadow-sm px-10 py-12 w-[30rem] rounded-3xl cursor-default
+            transform transition duration-300 hover:scale-105"
           >
             <h3 className="text-lg font-bold mb-2">Mission</h3>
             <ol className="list-decimal text-base ml-4">

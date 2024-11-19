@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  * @param {() => void} props.onClick - Callback function triggered when the tab is clicked.
  * @returns {JSX.Element} - The rendered tab component.
  */
-function Tab({ name, isActive, onClick }) {
+function Tab({ name, isActive = false, onClick }) {
   return (
     <button
       type="button"
@@ -33,7 +33,7 @@ function Tab({ name, isActive, onClick }) {
 
 Tab.propTypes = {
   name: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
+  isActive: PropTypes.bool,
   onClick: PropTypes.func.isRequired
 }
 

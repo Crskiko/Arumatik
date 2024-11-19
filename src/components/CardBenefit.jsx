@@ -13,7 +13,7 @@ function CardBenefit({ name, desc, img }) {
   return (
     <div
       className="flex flex-col justify-center items-center bg-white shadow-sm w-fit px-5 py-8 
-      rounded-3xl transform transition duration-300 hover:scale-105 cursor-pointer"
+      rounded-3xl transform transition duration-300 hover:scale-105 cursor-default"
     >
       <img src={img} alt="icon" className="max-w-20 mb-5" />
 
