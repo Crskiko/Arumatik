@@ -2,13 +2,15 @@ import PropTypes from "prop-types";
 import Button from "../components/Button";
 
 /**
- * An error page that appears when an error occurred.
+ * The error page displayed when a route is not found or an error occurs.
+ *
+ * This page shows an error message and may provide navigation options back to the home or other sections.
  *
  * @param {object} props - Props for the page.
  * @param {string} props.error - The displayed error message.
- * @returns {*} - The rendered error page.
+ * @returns {JSX.Element} The rendered Error page.
  */
-function Error({ error }) {
+function ErrorPage({ error }) {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-beige text-blue">
       <h1 className="text-3xl font-bold mb-4">Oops! Something went wrong.</h1>
@@ -23,8 +25,8 @@ function Error({ error }) {
   );
 }
 
-Error.propTypes = {
+ErrorPage.propTypes = {
   error: PropTypes.string.isRequired,
 };
 
-export default Error;
+export default ErrorPage;

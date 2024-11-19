@@ -1,5 +1,10 @@
 import ArrowDownIcon from "../assets/arrow-down-icon.svg";
 
+/**
+ * A dropdown component that displays a header with a title and a list of selectable items.
+ *
+ * @returns {JSX.Element} The rendered Dropdown component.
+ */
 function Dropdown() {
   return (
     <div className="w-[420px] m-12">

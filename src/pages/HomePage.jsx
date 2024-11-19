@@ -6,21 +6,23 @@ import ArrowV2Icon from "../assets/arrow-v2-icon.svg";
 import Heading from "../components/Heading";
 import CardBenefit from "../components/CardBenefit";
 import useFetch from "../hooks/useFetch";
-import Loading from "./Loading";
-import Error from "./Error";
 import CardCategory from "../components/CardCategory";
+import LoadingPage from "./LoadingPage";
+import ErrorPage from "./ErrorPage";
 
 /**
- * A home page that displays the basic information of the product and company.
+ * The home page of the application.
  *
- * @returns {*} - The rendered home page.
+ * This page displays the main content and features for the app's landing screen.
+ *
+ * @returns {JSX.Element} The rendered home page.
  */
-function Home() {
+function HomePage() {
   const navigate = useNavigate();
   const { data, loading, error } = useFetch("benefit.json");
 
-  if (loading) return <Loading></Loading>;
-  if (error) return <Error error={error}></Error>;
+  if (loading) return <LoadingPage></LoadingPage>;
+  if (error) return <ErrorPage error={error}></ErrorPage>;
 
   return (
     <div>
@@ -192,4 +194,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

@@ -1,9 +1,11 @@
 /**
- * A loading page that appear when data is ine the process of fetching.
+ * The loading page displayed during data fetching or transitions.
  *
- * @returns {*} - The rendered loading page.
+ * This page provides a visual indicator to inform users that content is loading.
+ *
+ * @returns {JSX.Element} The rendered Loading page.
  */
-function Loading() {
+function LoadingPage() {
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex gap-2">
@@ -15,4 +17,4 @@ function Loading() {
   )
 }
 
-export default Loading;
+export default LoadingPage;

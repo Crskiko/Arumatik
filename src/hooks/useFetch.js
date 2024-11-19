@@ -4,7 +4,16 @@ import { useEffect, useState } from "react";
  * A hook to fetch data from JSON files converted to JS arrays.
  *
  * @param {string} file - The intended JSON file name.
- * @returns {{ data: any; loading: boolean; error: string; }} - The data, loading and error status.
+ * @returns {{ data: Array<Object>; loading: boolean; error: string; }} - An object containing:
+ *   - `data` (Array|Object): The parsed JSON data.
+ *   - `loading` (boolean): Whether the data is still loading.
+ *   - `error` (string|null): Any error encountered while loading.
+ * 
+ * @example
+ * const { data, loading, error } = useProductData('/data/products.json');
+ * if (loading) return <p>Loading...</p>;
+ * if (error) return <p>Error: {error}</p>;
+ * return <ProductList products={data} />;
  */
 const useFetch = (file) => {
   const [data, setData] = useState([]);
