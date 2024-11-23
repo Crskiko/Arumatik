@@ -9,6 +9,7 @@ import { useProductContext } from "../contexts/ProductContext";
 import useFilterData from "../hooks/useFilterData";
 import useUniqueValue from "../hooks/useUniqueValue";
 import Dropdown from "../components/Dropdown";
+import { useEffect } from "react";
 
 function ProductList() {
   const { products, loading, error } = useProductContext();
@@ -38,23 +39,27 @@ function ProductList() {
         ></Heading>
 
         <div className="flex justify-between w-full mt-16 mb-10 px-24">
-          <div className="">
+          <div className="flex items-center gap-8">
             {categories.map((value, index) => (
               <div key={index}>
                 <Tab
                   name={value}
                   isActive={value === selectedCategory ? true : false}
-                  onClick={() => setCategory(value)}
+                  onClick={() => {
+                    setCategory(value);
+                  }}
                 ></Tab>
               </div>
             ))}
           </div>
 
-          <Dropdown
-            selected={selectedSeries}
-            options={series}
-            setSeries={setSeries}
-          ></Dropdown>
+          {selectedCategory === "Plastic Pallet" && (
+            <Dropdown
+              selected={selectedSeries}
+              options={series}
+              setSeries={setSeries}
+            ></Dropdown>
+          )}
         </div>
       </section>
 

@@ -17,7 +17,7 @@ function CardProduct({ product }) {
       rounded-3xl shadow-sm transform transition-all duration-300 hover:scale-105"
     >
       <img
-        src={product.image}
+        src={`images/${product.image}`}
         alt={product.name}
         className="w-64 h-36 object-cover overflow-hidden rounded-2xl mb-3"
       />
