@@ -29,7 +29,7 @@ function ListSection({ products }) {
 }
 
 ListSection.propTypes = {
-  products: PropTypes.array.isRequired
-}
+  products: PropTypes.array.isRequired,
+};
 
 export default ListSection;

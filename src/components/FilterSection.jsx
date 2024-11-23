@@ -62,7 +62,7 @@ FilterSection.propTypes = {
   setCategory: PropTypes.func.isRequired,
   series: PropTypes.array.isRequired,
   selectedSeries: PropTypes.string,
-  setSeries: PropTypes.func.isRequired
-}
+  setSeries: PropTypes.func.isRequired,
+};
 
 export default FilterSection;

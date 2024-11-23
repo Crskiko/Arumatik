@@ -13,12 +13,12 @@ import PropTypes from "prop-types";
  */
 function DetailSection({ product, onClick }) {
   return (
-    <section className="h-fit pt-28 pb-10">
+    <section className="h-fit pt-32 pb-10">
       <div className="grid grid-cols-2 gap-16">
         <img
           src={`/images/${product.image}`}
           alt={convertToSlug(product.name)}
-          className="w-[40vw] h-full object-contain bg-beige rounded-3xl"
+          className="w-[40vw] h-[29rem] object-contain bg-beige rounded-3xl"
         />
 
         <div className="w-[39vw]">
@@ -65,7 +65,7 @@ function DetailSection({ product, onClick }) {
 
 DetailSection.propTypes = {
   product: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired
-}
+  onClick: PropTypes.func.isRequired,
+};
 
 export default DetailSection;

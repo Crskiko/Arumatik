@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
 
 /**
  * A card component that displays product categories.
@@ -10,17 +9,16 @@ import { useNavigate } from "react-router-dom";
  * @param {string} props.img - Path URL of the image displayed.
  * @param {boolean} props.primary - Boolean value that determines card style.
  * @param {boolean} props.reverse - Boolean value that determines card direction.
+ * @param {() => void} props.onClick - Callback function triggered when the card is clicked.
  * @returns {JSX.Element} - The rendered category card component.
  */
-function CardCategory({ name, desc, img, primary, reverse }) {
-  const navigate = useNavigate();
-
+function CardCategory({ name, desc, img, primary, reverse, onClick }) {
   return (
     <div
       className={`flex ${reverse ? "flex-row-reverse pl-9" : "flex-row pr-9"} 
       ${primary ? "bg-blue shadow-xl" : "bg-beige shadow-sm"} items-center justify-between 
       w-[32rem] h-60 rounded-3xl transform transition duration-300 hover:scale-105 cursor-pointer`}
-      onClick={() => navigate('/products', { state: { category: name } })}
+      onClick={onClick}
     >
       <img
         src={img}
@@ -45,6 +43,7 @@ CardCategory.propTypes = {
   img: PropTypes.string.isRequired,
   primary: PropTypes.bool.isRequired,
   reverse: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default CardCategory;

@@ -51,7 +51,7 @@ function HeroSection({ navigate, scroll }) {
 
 HeroSection.propTypes = {
   navigate: PropTypes.func.isRequired,
-  scroll: PropTypes.func.isRequired
-}
+  scroll: PropTypes.func.isRequired,
+};
 
 export default HeroSection;

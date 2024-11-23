@@ -55,7 +55,7 @@ function Dropdown({ selected, options, setSeries }) {
 Dropdown.propTypes = {
   selected: PropTypes.string,
   options: PropTypes.array.isRequired,
-  setSeries: PropTypes.func.isRequired
-}
+  setSeries: PropTypes.func.isRequired,
+};
 
 export default Dropdown;

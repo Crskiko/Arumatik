@@ -1,5 +1,7 @@
 import CardCategory from "./CardCategory";
 import Heading from "./Heading";
+import { data as category } from "../assets/data/category.json";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Component that displays product categories in home page.
@@ -7,6 +9,8 @@ import Heading from "./Heading";
  * @returns {JSX.Element} The rendered category section.
  */
 function CategorySection() {
+  const navigate = useNavigate();
+
   return (
     <section id="product" className="h-[120vh]">
       <Heading
@@ -16,37 +20,18 @@ function CategorySection() {
       ></Heading>
 
       <div className="grid grid-cols-2 gap-8 mt-10">
-        <CardCategory
-          name="Plastic Pallet"
-          desc="Lightweight and durable for high-volume, easy handling."
-          img="/images/sample.jpg"
-          primary={false}
-          reverse={false}
-        ></CardCategory>
-
-        <CardCategory
-          name="Wooden Pallet"
-          desc="Eco-friendly and strong, ideal for heavy-duty use."
-          img="/images/sample.jpg"
-          primary={true}
-          reverse={true}
-        ></CardCategory>
-
-        <CardCategory
-          name="Silica Gel"
-          desc="Reliable moisture control to protect goods."
-          img="/images/sample.jpg"
-          primary={true}
-          reverse={true}
-        ></CardCategory>
-
-        <CardCategory
-          name="Container"
-          desc="Secure, long-lasting storage for tough environments."
-          img="/images/sample.jpg"
-          primary={false}
-          reverse={false}
-        ></CardCategory>
+        {category.map((value, index) => (
+          <div key={index}>
+            <CardCategory
+              name={value.name}
+              desc={value.description}
+              img={`/images/${value.image}`}
+              primary={[0, 3].includes(index) ? false : true}
+              reverse={[0, 4].includes(index) ? false : true}
+              onClick={() => navigate('/products', { state: { category: value.name } })}
+            ></CardCategory>
+          </div>
+        ))}
       </div>
     </section>
   );

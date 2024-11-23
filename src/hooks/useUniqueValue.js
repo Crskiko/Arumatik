@@ -12,7 +12,7 @@ const useUniqueValue = (data, key) => {
     if (!data || !Array.isArray(data)) return [];
 
     const values = data.map((item) => item[key]);
-    return [...new Set(values)];
+    return [...new Set(values)].filter((value) => value !== null);
   }, [data, key]);
 
   return result;

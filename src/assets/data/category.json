@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "name": "Plastic Pallet",
+      "description": "Lightweight and durable for high-volume, easy handling.",
+      "image": "sample.jpg"
+    },
+    {
+      "name": "Wooden Pallet",
+      "description": "Eco-friendly and strong, ideal for heavy-duty use.",
+      "image": "sample.jpg"
+    },
+    {
+      "name": "Silica Gel",
+      "description": "Reliable moisture control to protect goods.",
+      "image": "sample.jpg"
+    },
+    {
+      "name": "Container",
+      "description": "Secure, long-lasting storage for tough environments.",
+      "image": "sample.jpg"
+    }
+  ]
+}
