@@ -5,7 +5,7 @@ import Button from "../components/Button";
 import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
 import Heading from "../components/Heading";
 import CardBenefit from "../components/CardBenefit";
-import useFetch from "../hooks/useFetch";
+import useFetchData from "../hooks/useFetchData";
 import CardCategory from "../components/CardCategory";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
@@ -21,7 +21,7 @@ import { useRef } from "react";
 function Home() {
   const targetSection = useRef(null);
   const navigate = useNavigate();
-  const { data, loading, error } = useFetch("benefit.json");
+  const { data, loading, error } = useFetchData("benefit.json");
 
   if (loading) return <Loading></Loading>;
   if (error) return <ErrorMessage error={error}></ErrorMessage>;

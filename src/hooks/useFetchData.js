@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
  * if (error) return <p>Error: {error}</p>;
  * return <ProductList products={data} />;
  */
-const useFetch = (file) => {
+const useFetchData = (file) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -41,4 +41,4 @@ const useFetch = (file) => {
   return { data, loading, error };
 };
 
-export default useFetch;
+export default useFetchData;

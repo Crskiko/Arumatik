@@ -1,14 +1,18 @@
+import ErrorMessage from "../components/ErrorMessage";
 import Footer from "../components/Footer";
 import Heading from "../components/Heading";
+import Loading from "../components/Loading";
 import Navbar from "../components/Navbar";
 import Tab from "../components/Tab";
-import useFetch from "../hooks/useFetch";
-import useGroupData from "../hooks/useGroupData";
+import { useProductContext } from "../contexts/ProductContext";
 import useUniqueValue from "../hooks/useUniqueValue";
 
 function ProductList() {
-  const { data: product, loading, error } = useFetch('data/product.json');
-  const categories = useUniqueValue(product, 'category');
+  const { products, loading, error } = useProductContext();
+  const categories = useUniqueValue(data, 'category');
+
+  if (loading) return <Loading></Loading>;
+  if (error) return <ErrorMessage error={error}></ErrorMessage>;
 
   return (
     <div>
@@ -23,7 +27,6 @@ function ProductList() {
         ></Heading>
 
         <div>
-
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useContext, useMemo } from "react";
-import useFetch from "../hooks/useFetch";
+import useFetchData from "../hooks/useFetchData";
 
 /**
  * Context to store product data.
@@ -16,7 +16,7 @@ const ProductContext = createContext();
  * @returns {React.ReactNode} - The wrapped children components with the provided context value.
  */
 export const ProductProvider = ({ children }) => {
-  const { data: products, loading, error } = useFetch("data/product.json");
+  const { data: products, loading, error } = useFetchData("data/product.json");
 
   const value = useMemo(() => ({ products, loading, error }), [products, loading, error]);
 

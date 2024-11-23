@@ -13,7 +13,7 @@ const useUniqueValue = (data, key) => {
 
     const values = data.map(item => item[key]);
     return [...new Set(values)];
-  });
+  }, [data, key]);
 
   return result;
 };
