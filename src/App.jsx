@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import ProductListPage from "./pages/ProductListPage"
-import ProductDetailPage from "./pages/ProductDetailPage"
-import HomePage from "./pages/HomePage"
+import ProductList from "./pages/ProductList"
+import ProductDetail from "./pages/ProductDetail"
+import Home from "./pages/Home"
 
 function App() {
   return (
     <BrowserRouter future={{ v7_relativeSplatPath: true }}>
       <Routes>
-        <Route path="/" element={<HomePage></HomePage>}></Route>
-        <Route path="/products" element={<ProductListPage></ProductListPage>}></Route>
-        <Route path="/products/:id" element={<ProductDetailPage></ProductDetailPage>}></Route>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/products" element={<ProductList></ProductList>}></Route>
+        <Route path="/products/:id" element={<ProductDetail></ProductDetail>}></Route>
       </Routes>
     </BrowserRouter>
   )

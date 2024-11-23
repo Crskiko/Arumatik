@@ -4,25 +4,25 @@
       "id": "B01",
       "title": "Buy and Rent",
       "description": "Flexible purchase and rental options to fit your needs.",
-      "image": "/cart-icon.svg"
+      "image": "icons/cart-icon.svg"
     },
     {
       "id": "B02",
       "title": "Local Delivery",
       "description": "Bringing convenience right to your door.",
-      "image": "/truck-icon.svg"
+      "image": "icons/truck-icon.svg"
     },
     {
       "id": "B03",
       "title": "Rental Warranty",
       "description": "Coverage for rented pallets during the rental period.",
-      "image": "/lock-icon.svg"
+      "image": "icons/lock-icon.svg"
     },
     {
       "id": "B04",
       "title": "Damage Coverage",
       "description": "Warranty on any transport damages for all items.",
-      "image": "/shield-icon.svg"
+      "image": "icons/shield-icon.svg"
     }
   ]
 }

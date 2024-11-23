@@ -1,7 +1,7 @@
 import Logo from "../assets/logo.svg";
-import MailIcon from "../assets/mail-icon.svg";
-import PhoneIcon from "../assets/phone-icon.svg";
-import WAIcon from "../assets/wa-icon.svg";
+import MailIcon from "../assets/icons/mail-icon.svg";
+import PhoneIcon from "../assets/icons/phone-icon.svg";
+import WAIcon from "../assets/icons/wa-icon.svg";
 
 /**
  * A footer component that displays the logo and contact information.

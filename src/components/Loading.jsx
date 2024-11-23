@@ -5,7 +5,7 @@
  *
  * @returns {JSX.Element} The rendered Loading page.
  */
-function LoadingPage() {
+function Loading() {
   return (
     <div className="flex items-center justify-center h-screen">
       <div className="flex gap-2">
@@ -17,4 +17,4 @@ function LoadingPage() {
   )
 }
 
-export default LoadingPage;
+export default Loading;

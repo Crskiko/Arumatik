@@ -2,8 +2,14 @@ import Footer from "../components/Footer";
 import Heading from "../components/Heading";
 import Navbar from "../components/Navbar";
 import Tab from "../components/Tab";
+import useFetch from "../hooks/useFetch";
+import useGroupData from "../hooks/useGroupData";
+import useUniqueValue from "../hooks/useUniqueValue";
 
-function ProductListPage() {
+function ProductList() {
+  const { data: product, loading, error } = useFetch('data/product.json');
+  const categories = useUniqueValue(product, 'category');
+
   return (
     <div>
       <Navbar></Navbar>
@@ -17,6 +23,7 @@ function ProductListPage() {
         ></Heading>
 
         <div>
+
         </div>
       </section>
 
@@ -25,4 +32,4 @@ function ProductListPage() {
   );
 }
 
-export default ProductListPage;
+export default ProductList;

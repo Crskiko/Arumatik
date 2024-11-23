@@ -2,13 +2,14 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import ArrowV2Icon from "../assets/arrow-v2-icon.svg";
+import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
 import Heading from "../components/Heading";
 import CardBenefit from "../components/CardBenefit";
 import useFetch from "../hooks/useFetch";
 import CardCategory from "../components/CardCategory";
-import LoadingPage from "./LoadingPage";
-import ErrorPage from "./ErrorPage";
+import Loading from "../components/Loading";
+import ErrorMessage from "../components/ErrorMessage";
+import { useRef } from "react";
 
 /**
  * The home page of the application.
@@ -17,12 +18,13 @@ import ErrorPage from "./ErrorPage";
  *
  * @returns {JSX.Element} The rendered home page.
  */
-function HomePage() {
+function Home() {
+  const targetSection = useRef(null);
   const navigate = useNavigate();
   const { data, loading, error } = useFetch("benefit.json");
 
-  if (loading) return <LoadingPage></LoadingPage>;
-  if (error) return <ErrorPage error={error}></ErrorPage>;
+  if (loading) return <Loading></Loading>;
+  if (error) return <ErrorMessage error={error}></ErrorMessage>;
 
   return (
     <div>
@@ -48,27 +50,26 @@ function HomePage() {
           </div>
 
           <img
-            src="/sample.jpg"
+            src="images/sample.jpg"
             alt="hero-img"
             className="w-[26rem] h-[26rem] overflow-hidden rounded-[40px]"
           />
         </div>
 
-        <a
-          className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-10 
-          transform transition duration-300 hover:scale-110"
-          href="#about"
+        <div
+          className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-10"
+          onMouseOver={() => { if(targetSection.current) targetSection.current.scrollIntoView() }}
         >
           <img
             src={ArrowV2Icon}
             alt="arrow-icon"
             className="ml-[0.05rem] w-4"
           />
-        </a>
+        </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-beige">
+      <section id="about" className="bg-beige" ref={targetSection}>
         <Heading
           text="About Us"
           desc="Trusted across Indonesia for high-quality, sustainable pallet solutions tailored 
@@ -134,7 +135,7 @@ function HomePage() {
           <CardCategory
             name="Plastic Pallet"
             desc="Lightweight and durable for high-volume, easy handling."
-            img="sample.jpg"
+            img="images/sample.jpg"
             primary={false}
             reverse={false}
           ></CardCategory>
@@ -142,7 +143,7 @@ function HomePage() {
           <CardCategory
             name="Wooden Pallet"
             desc="Eco-friendly and strong, ideal for heavy-duty use."
-            img="sample.jpg"
+            img="images/sample.jpg"
             primary={true}
             reverse={true}
           ></CardCategory>
@@ -150,7 +151,7 @@ function HomePage() {
           <CardCategory
             name="Silica Gel"
             desc="Reliable moisture control to protect goods."
-            img="sample.jpg"
+            img="images/sample.jpg"
             primary={true}
             reverse={true}
           ></CardCategory>
@@ -158,7 +159,7 @@ function HomePage() {
           <CardCategory
             name="Container"
             desc="Secure, long-lasting storage for tough environments."
-            img="sample.jpg"
+            img="images/sample.jpg"
             primary={false}
             reverse={false}
           ></CardCategory>
@@ -174,17 +175,17 @@ function HomePage() {
         ></Heading>
 
         <div className="flex flex-wrap justify-between items-center w-full px-36 mt-12">
-          <img src="logo-garuda.png" alt="logo-garuda" className="max-w-24 opacity-20 transform 
+          <img src="images/logo-garuda.png" alt="logo-garuda" className="max-w-24 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="logo-indofood.png" alt="logo-indofood" className="max-w-20 opacity-20 transform 
+          <img src="images/logo-indofood.png" alt="logo-indofood" className="max-w-20 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="logo-unilever.png" alt="logo-unilever" className="max-w-16 opacity-20 transform 
+          <img src="images/logo-unilever.png" alt="logo-unilever" className="max-w-16 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="logo-p&g.png" alt="logo-p&g" className="max-w-24 opacity-20 transform 
+          <img src="images/logo-p&g.png" alt="logo-p&g" className="max-w-24 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="logo-toyota.png" alt="logo-toyota" className="max-w-20 opacity-20 transform 
+          <img src="images/logo-toyota.png" alt="logo-toyota" className="max-w-20 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="logo-dover.png" alt="logo-dover" className="max-w-36 opacity-20 transform 
+          <img src="images/logo-dover.png" alt="logo-dover" className="max-w-36 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
         </div>
       </section>
@@ -194,4 +195,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
