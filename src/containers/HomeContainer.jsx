@@ -13,7 +13,7 @@ import ErrorMessage from "../components/ErrorMessage";
 
 /**
  * Main container for the home page.
- * Fetches data, handles loading/error states, and organizes sections.
+ * Fetches data, handles error states, and organizes sections.
  * 
  * @returns {JSX.Element} The rendered home component.
  */

@@ -7,6 +7,12 @@ import convertToSlug from "../utils/convertToSlug";
 import convertToTitle from "../utils/convertToTitle";
 import Button from "../components/Button";
 
+/**
+ * Container for the Product Detail page.
+ * Fetches and displays product data.
+ *
+ * @returns {JSX.Element} The rendered product detail component.
+ */
 function ProductDetailContainer() {
   const { productName } = useParams();
   const products = useProductContext();

@@ -31,7 +31,7 @@ ProductProvider.propTypes = {
 
 /**
  * Custom hook to access the product context.
- * This hook returns the current product data, loading state, and error message.
+ * This hook returns the current product data.
  *
  * @returns {Array} The product context value containing a list of products.
  */

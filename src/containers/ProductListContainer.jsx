@@ -1,7 +1,6 @@
 import CardProduct from "../components/CardProduct";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
-import Loading from "../components/Loading";
 import Tab from "../components/Tab";
 import { useProductContext } from "../contexts/ProductContext";
 import useFilterData from "../hooks/useFilterData";
