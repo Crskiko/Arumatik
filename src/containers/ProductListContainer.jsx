@@ -7,7 +7,7 @@ import { useProductContext } from "../contexts/ProductContext";
 import useFilterData from "../hooks/useFilterData";
 import useUniqueValue from "../hooks/useUniqueValue";
 import Dropdown from "../components/Dropdown";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -20,7 +20,7 @@ import useScrollTop from "../hooks/useScrollTop";
  * @returns {JSX.Element} The rendered product list component.
  */
 function ProductListContainer() {
-  const { products, loading, error } = useProductContext();
+  const products = useProductContext();
   const {
     products: filteredProducts,
     category: selectedCategory,
@@ -31,17 +31,17 @@ function ProductListContainer() {
   const categories = useUniqueValue(products, "category");
   const series = useUniqueValue(products, "series");
 
+  const navigate = useNavigate();
   const location = useLocation();
   const { state } = location;
 
   useEffect(() => {
     if (state) setCategory(state.category);
   }, [state]);
-  
+
   useScrollTop();
 
-  if (loading) return <Loading></Loading>;
-  if (error) return <ErrorMessage error={error}></ErrorMessage>;
+  if (!products) return <ErrorMessage error={"Products not found."}></ErrorMessage>;
 
   return (
     <div>
@@ -85,7 +85,10 @@ function ProductListContainer() {
         <div className="grid grid-cols-4 gap-6">
           {filteredProducts.map((value) => (
             <div key={value.name}>
-              <CardProduct product={value}></CardProduct>
+              <CardProduct
+                product={value}
+                onClick={() => navigate(`/products/${value.name}`)}
+              ></CardProduct>
             </div>
           ))}
         </div>

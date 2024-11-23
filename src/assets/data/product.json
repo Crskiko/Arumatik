@@ -794,7 +794,7 @@
       "racking_load": "1000 kg"
     },
     {
-      "name": "4 Way Entry",
+      "name": "4-Way",
       "series": null,
       "category": "Wooden Pallet",
       "image": "woods/4-way.jpeg",
@@ -807,7 +807,7 @@
       "racking_load": null
     },
     {
-      "name": "2 Way Entry",
+      "name": "2-Way",
       "series": null,
       "category": "Wooden Pallet",
       "image": "woods/2-way.jpeg",

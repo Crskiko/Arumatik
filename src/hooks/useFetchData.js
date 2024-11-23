@@ -1,38 +1,47 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * A hook to fetch data from JSON files converted to JS arrays.
  *
  * @param {string} file - The intended JSON file name.
- * @returns {{ data: Array<Object>; loading: boolean; error: string; }} - An object containing:
+ * @returns {{ data: Array<Object>; loading: boolean; error: string; refetch: Function }} - An object containing:
  *   - `data` (Array|Object): The parsed JSON data.
  *   - `loading` (boolean): Whether the data is still loading.
  *   - `error` (string|null): Any error encountered while loading.
+ *   - `refetch` {function(): Promise<void>}: A function to manually trigger a re-fetch of the data.
  */
 const useFetchData = (file) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`data/${file}`);
-        if (!response.ok) throw new Error("Failed to fetch data.");
+  const fetchData = useCallback(async () => {
+    try {
+      const response = await fetch(`data/${file}`);
+      if (!response.ok)
+        throw new Error(`Failed to fetch data: ${response.statusText}`);
 
-        const json = await response.json();
-        setData(json.data);
-      } catch (err) {
+      console.log(response.json);
+      const json = await JSON.parse(response);
+      console.log(json);
+      setData(json.data);
+    } catch (err) {
+      if (err.name === "SyntaxError") {
+        setError("Error parsing to JSON.");
+      } else {
         setError(err.message);
-      } finally {
-        setLoading(false);
       }
-    };
+    } finally {
+      setLoading(false);
+    }
+  });
 
+  useEffect(() => {
     fetchData();
-  }, [file]);
+    console.log("fetching");
+  }, [fetchData]);
 
-  return { data, loading, error };
+  return { data, loading, error, refetch: fetchData };
 };
 
 export default useFetchData;

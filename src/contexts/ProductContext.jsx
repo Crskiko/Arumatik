@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { createContext, useContext, useMemo } from "react";
-import useFetchData from "../hooks/useFetchData";
+import { data as products } from "../assets/data/product.json";
 
 /**
  * Context to store product data.
@@ -16,11 +16,9 @@ const ProductContext = createContext();
  * @returns {React.ReactNode} - The wrapped children components with the provided context value.
  */
 export const ProductProvider = ({ children }) => {
-  const { data: products, loading, error } = useFetchData("product.json");
-
   const value = useMemo(() => {
-    return { products, loading, error }
-  }, [products, loading, error]);
+    return products;
+  }, [products]);
 
   return (
     <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
@@ -35,10 +33,7 @@ ProductProvider.propTypes = {
  * Custom hook to access the product context.
  * This hook returns the current product data, loading state, and error message.
  *
- * @returns {Object} The product context value containing:
- *   - `products` (Array|Object): List of products.
- *   - `loading` (boolean): Boolean indicating if data is loading.
- *   - `error` (string|null): Error message (if any).
+ * @returns {Array} The product context value containing a list of products.
  */
 export const useProductContext = () => {
   const context = useContext(ProductContext);

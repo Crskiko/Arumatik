@@ -5,12 +5,11 @@ import Button from "../components/Button";
 import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
 import Heading from "../components/Heading";
 import CardBenefit from "../components/CardBenefit";
-import useFetchData from "../hooks/useFetchData";
 import CardCategory from "../components/CardCategory";
-import Loading from "../components/Loading";
-import ErrorMessage from "../components/ErrorMessage";
 import { useRef } from "react";
 import useScrollTop from "../hooks/useScrollTop";
+import { data as benefit } from "../assets/data/benefit.json";
+import ErrorMessage from "../components/ErrorMessage";
 
 /**
  * Main container for the home page.
@@ -21,12 +20,10 @@ import useScrollTop from "../hooks/useScrollTop";
 function HomeContainer() {
   const targetSection = useRef(null);
   const navigate = useNavigate();
-  const { data, loading, error } = useFetchData("benefit.json");
   
   useScrollTop();
 
-  if (loading) return <Loading></Loading>;
-  if (error) return <ErrorMessage error={error}></ErrorMessage>;
+  if (!benefit) return <ErrorMessage error={"Data not found."}></ErrorMessage>;
 
   return (
     <div>
@@ -52,9 +49,9 @@ function HomeContainer() {
           </div>
 
           <img
-            src="images/sample.jpg"
+            src="/images/sample.jpg"
             alt="hero-img"
-            className="w-[26rem] h-[26rem] overflow-hidden rounded-[40px]"
+            className="w-[26rem] h-[26rem] overflow-hidden rounded-[2.5rem]"
           />
         </div>
 
@@ -115,7 +112,7 @@ function HomeContainer() {
         ></Heading>
 
         <div className="flex flex-wrap items-center gap-8 mt-10">
-          {data.map((v) => (
+          {benefit.map((v) => (
             <div key={v.id}>
               <CardBenefit
                 name={v.title}
@@ -139,7 +136,7 @@ function HomeContainer() {
           <CardCategory
             name="Plastic Pallet"
             desc="Lightweight and durable for high-volume, easy handling."
-            img="images/sample.jpg"
+            img="/images/sample.jpg"
             primary={false}
             reverse={false}
           ></CardCategory>
@@ -147,7 +144,7 @@ function HomeContainer() {
           <CardCategory
             name="Wooden Pallet"
             desc="Eco-friendly and strong, ideal for heavy-duty use."
-            img="images/sample.jpg"
+            img="/images/sample.jpg"
             primary={true}
             reverse={true}
           ></CardCategory>
@@ -155,7 +152,7 @@ function HomeContainer() {
           <CardCategory
             name="Silica Gel"
             desc="Reliable moisture control to protect goods."
-            img="images/sample.jpg"
+            img="/images/sample.jpg"
             primary={true}
             reverse={true}
           ></CardCategory>
@@ -163,7 +160,7 @@ function HomeContainer() {
           <CardCategory
             name="Container"
             desc="Secure, long-lasting storage for tough environments."
-            img="images/sample.jpg"
+            img="/images/sample.jpg"
             primary={false}
             reverse={false}
           ></CardCategory>
@@ -180,37 +177,37 @@ function HomeContainer() {
 
         <div className="flex flex-wrap justify-between items-center w-full px-36 mt-12">
           <img
-            src="images/logos/logo-garuda.png"
+            src="/images/logos/logo-garuda.png"
             alt="logo-garuda"
             className="max-w-24 opacity-20 transform 
           transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105"
           />
           <img
-            src="images/logos/logo-indofood.png"
+            src="/images/logos/logo-indofood.png"
             alt="logo-indofood"
             className="max-w-20 opacity-20 transform transition-all duration-500 
             cursor-pointer hover:opacity-100 hover:scale-105"
           />
           <img
-            src="images/logos/logo-unilever.png"
+            src="/images/logos/logo-unilever.png"
             alt="logo-unilever"
             className="max-w-16 opacity-20 transform transition-all duration-500 
             cursor-pointer hover:opacity-100 hover:scale-105"
           />
           <img
-            src="images/logos/logo-p&g.png"
+            src="/images/logos/logo-p&g.png"
             alt="logo-p&g"
             className="max-w-24 opacity-20 transform transition-all duration-500 
             cursor-pointer hover:opacity-100 hover:scale-105"
           />
           <img
-            src="images/logos/logo-toyota.png"
+            src="/images/logos/logo-toyota.png"
             alt="logo-toyota"
             className="max-w-20 opacity-20 transform transition-all duration-500 
             cursor-pointer hover:opacity-100 hover:scale-105"
           />
           <img
-            src="images/logos/logo-dover.png"
+            src="/images/logos/logo-dover.png"
             alt="logo-dover"
             className="max-w-36 opacity-20 transform transition-all duration-500 
             cursor-pointer hover:opacity-100 hover:scale-105"

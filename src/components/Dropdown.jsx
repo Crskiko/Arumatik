@@ -20,23 +20,23 @@ function Dropdown({ selected, options, setSeries }) {
           isOpen
             ? "rounded-t-xl bg-white border-2 border-b-0 border-beige"
             : "rounded-xl bg-beige"
-        } flex items-center justify-between px-6 py-3`}
+        } flex items-center justify-between px-6 py-3 cursor-pointer`}
+        onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
       >
         <p className="text-base">{selected}</p>
         <img
           src={ArrowDownIcon}
           alt="arrow-icon"
-          className={`${isOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
-          onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
+          className={isOpen ? "rotate-180" : "rotate-0"}
         />
       </div>
 
       {isOpen && (
-        <ul className="absolute z-10 border-2 border-t-0 border-beige rounded-b-xl cursor-pointer w-full">
+        <ul className="absolute z-10 border-2 border-t-0 border-beige bg-white rounded-b-xl cursor-pointer w-full">
           {options.map((value, index) => (
             <li
               key={index}
-              className="text-sm px-6 py-3 transition-all duration-300 bg-white hover:bg-beige"
+              className="text-sm px-6 py-3 transition-all duration-300 hover:bg-beige"
               onClick={() => {
                 setSeries(value);
                 setIsOpen(false);
