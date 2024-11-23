@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ArrowDownIcon from "../assets/icons/arrow-down-icon.svg";
+import PropTypes from "prop-types";
 
 /**
  * A dropdown component that displays a header with a title and a list of selectable items.
  *
  * @param {object} props - Props for the card.
- * @param {string} props.selected - The name of the selected product series.
+ * @param {string|null} props.selected - The name of the selected product series (optional).
  * @param {Array<string>} props.options - Array of series variations.
  * @param {() => void} props.setSeries - Callback function triggered when the option is clicked.
  * @returns {JSX.Element} The rendered dropdown component.
@@ -49,6 +50,12 @@ function Dropdown({ selected, options, setSeries }) {
       )}
     </div>
   );
+}
+
+Dropdown.propTypes = {
+  selected: PropTypes.string,
+  options: PropTypes.array.isRequired,
+  setSeries: PropTypes.func.isRequired
 }
 
 export default Dropdown;
