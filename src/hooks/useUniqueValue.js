@@ -1,4 +1,4 @@
-import { useMemo } from "react"
+import { useMemo } from "react";
 
 /**
  * Custom hook to extract unique values from an array of objects.
@@ -9,9 +9,9 @@ import { useMemo } from "react"
  */
 const useUniqueValue = (data, key) => {
   const result = useMemo(() => {
-    if(!data || !Array.isArray(data)) return [];
+    if (!data || !Array.isArray(data)) return [];
 
-    const values = data.map(item => item[key]);
+    const values = data.map((item) => item[key]);
     return [...new Set(values)];
   }, [data, key]);
 

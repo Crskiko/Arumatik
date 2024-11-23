@@ -58,7 +58,9 @@ function Home() {
 
         <div
           className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-10"
-          onMouseOver={() => { if(targetSection.current) targetSection.current.scrollIntoView() }}
+          onMouseOver={() => { 
+            if (targetSection.current) targetSection.current.scrollIntoView(); 
+          }}
         >
           <img
             src={ArrowV2Icon}
@@ -175,18 +177,42 @@ function Home() {
         ></Heading>
 
         <div className="flex flex-wrap justify-between items-center w-full px-36 mt-12">
-          <img src="images/logo-garuda.png" alt="logo-garuda" className="max-w-24 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="images/logo-indofood.png" alt="logo-indofood" className="max-w-20 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="images/logo-unilever.png" alt="logo-unilever" className="max-w-16 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="images/logo-p&g.png" alt="logo-p&g" className="max-w-24 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="images/logo-toyota.png" alt="logo-toyota" className="max-w-20 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
-          <img src="images/logo-dover.png" alt="logo-dover" className="max-w-36 opacity-20 transform 
-          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105" />
+          <img
+            src="images/logo-garuda.png"
+            alt="logo-garuda"
+            className="max-w-24 opacity-20 transform 
+          transition-all duration-500 cursor-pointer hover:opacity-100 hover:scale-105"
+          />
+          <img
+            src="images/logo-indofood.png"
+            alt="logo-indofood"
+            className="max-w-20 opacity-20 transform transition-all duration-500 
+            cursor-pointer hover:opacity-100 hover:scale-105"
+          />
+          <img
+            src="images/logo-unilever.png"
+            alt="logo-unilever"
+            className="max-w-16 opacity-20 transform transition-all duration-500 
+            cursor-pointer hover:opacity-100 hover:scale-105"
+          />
+          <img
+            src="images/logo-p&g.png"
+            alt="logo-p&g"
+            className="max-w-24 opacity-20 transform transition-all duration-500 
+            cursor-pointer hover:opacity-100 hover:scale-105"
+          />
+          <img
+            src="images/logo-toyota.png"
+            alt="logo-toyota"
+            className="max-w-20 opacity-20 transform transition-all duration-500 
+            cursor-pointer hover:opacity-100 hover:scale-105"
+          />
+          <img
+            src="images/logo-dover.png"
+            alt="logo-dover"
+            className="max-w-36 opacity-20 transform transition-all duration-500 
+            cursor-pointer hover:opacity-100 hover:scale-105"
+          />
         </div>
       </section>
 

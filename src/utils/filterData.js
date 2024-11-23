@@ -7,7 +7,7 @@
  * @returns {Array<Object>} - An array of filtered products.
  */
 const filterData = (data, category, series) => {
-  if(!Array.isArray(data)) return [];
+  if (!Array.isArray(data)) return [];
 
   return data.filter(item => item.category === category && (!series || item.series === series));
 };

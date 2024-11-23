@@ -1,23 +1,52 @@
-import ArrowDownIcon from "../assets/arrow-down-icon.svg";
+import { useState } from "react";
+import ArrowDownIcon from "../assets/icons/arrow-down-icon.svg";
 
 /**
  * A dropdown component that displays a header with a title and a list of selectable items.
  *
- * @returns {JSX.Element} The rendered Dropdown component.
+ * @param {object} props - Props for the card.
+ * @param {string} props.selected - The name of the selected product series.
+ * @param {Array<string>} props.options - Array of series variations.
+ * @param {() => void} props.setSeries - Callback function triggered when the option is clicked.
+ * @returns {JSX.Element} The rendered dropdown component.
  */
-function Dropdown() {
+function Dropdown({ selected, options, setSeries }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="w-[420px] m-12">
-      <div className="flex items-center justify-between px-6 py-3 rounded-xl bg-beige">
-        <p className="text-base">Medium Duty</p>
-        <img src={ArrowDownIcon} alt="arrow-icon" className="rotate-180" />
+    <div className="relative w-80">
+      <div
+        className={`${
+          isOpen
+            ? "rounded-t-xl bg-white border-2 border-b-0 border-beige"
+            : "rounded-xl bg-beige"
+        } flex items-center justify-between px-6 py-3`}
+      >
+        <p className="text-base">{selected}</p>
+        <img
+          src={ArrowDownIcon}
+          alt="arrow-icon"
+          className={`${isOpen ? "rotate-180" : "rotate-0"} cursor-pointer`}
+          onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
+        />
       </div>
 
-      <ul className="border-2 border-beige rounded-b-xl">
-        <li className="text-sm px-6 py-3 transition-all duration-300 hover:bg-beige">One Way Series</li>
-        <li className="text-sm px-6 py-3">One Way Series</li>
-        <li className="text-sm px-6 py-3">One Way Series</li>
-      </ul>
+      {isOpen && (
+        <ul className="absolute z-10 border-2 border-t-0 border-beige rounded-b-xl cursor-pointer w-full">
+          {options.map((value, index) => (
+            <li
+              key={index}
+              className="text-sm px-6 py-3 transition-all duration-300 bg-white hover:bg-beige"
+              onClick={() => {
+                setSeries(value);
+                setIsOpen(false);
+              }}
+            >
+              {value}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

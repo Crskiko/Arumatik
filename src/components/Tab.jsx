@@ -17,15 +17,19 @@ function Tab({ name, isActive = false, onClick }) {
       onClick={onClick}
     >
       <h3
-        className={`${isActive ? "text-blue font-bold text-lg" : "text-base text-grey"} 
-        transition-all duration-500 ease-in-out group-hover:text-blue group-hover:font-bold 
-        group-hover:text-lg`}
+        className={`${
+          isActive 
+            ? "text-blue font-bold text-lg" 
+            : "text-base text-grey"
+        } 
+        transition-all duration-500 ease-in-out group-hover:text-blue 
+        group-hover:font-bold group-hover:text-lg`}
       >
         {name}
       </h3>
       <div
-        className={`${isActive ? "w-24 h-[0.2rem]" : "w-0 h-0"} bg-blue rounded-sm 
-        transition-all duration-500 ease-in-out overflow-hidden group-hover:w-24 group-hover:h-[0.2rem]`}
+        className={`${isActive ? "w-24 h-[0.2rem]" : "w-0 h-0"} bg-blue rounded-sm transition-all 
+        duration-500 ease-in-out overflow-hidden group-hover:w-24 group-hover:h-[0.2rem]`}
       ></div>
     </button>
   );
@@ -34,7 +38,7 @@ function Tab({ name, isActive = false, onClick }) {
 Tab.propTypes = {
   name: PropTypes.string.isRequired,
   isActive: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
-}
+  onClick: PropTypes.func.isRequired,
+};
 
 export default Tab;

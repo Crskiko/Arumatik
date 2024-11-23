@@ -13,9 +13,11 @@ function Button({ label, onClick, primary }) {
   return (
     <div>
       <button
-        className={`${primary ? "bg-blue text-white shadow-lg" 
-          : "bg-white border border-blue shadow-md"} text-base px-5 py-3 rounded-xl 
-          transform transition duration-300 hover:scale-105`}
+        className={`${
+          primary
+            ? "bg-blue text-white shadow-lg"
+            : "bg-white border border-blue shadow-md"
+        } text-base px-5 py-3 rounded-xl transform transition duration-300 hover:scale-105`}
         onClick={onClick}
         type="button"
       >

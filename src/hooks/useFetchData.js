@@ -8,12 +8,6 @@ import { useEffect, useState } from "react";
  *   - `data` (Array|Object): The parsed JSON data.
  *   - `loading` (boolean): Whether the data is still loading.
  *   - `error` (string|null): Any error encountered while loading.
- * 
- * @example
- * const { data, loading, error } = useProductData('/data/products.json');
- * if (loading) return <p>Loading...</p>;
- * if (error) return <p>Error: {error}</p>;
- * return <ProductList products={data} />;
  */
 const useFetchData = (file) => {
   const [data, setData] = useState([]);
@@ -24,7 +18,7 @@ const useFetchData = (file) => {
     const fetchData = async () => {
       try {
         const response = await fetch(`data/${file}`);
-        if (!response.ok) throw new Error('Failed to fetch data.');
+        if (!response.ok) throw new Error("Failed to fetch data.");
 
         const json = await response.json();
         setData(json.data);
@@ -32,7 +26,7 @@ const useFetchData = (file) => {
         setError(err.message);
       } finally {
         setLoading(false);
-      };
+      }
     };
 
     fetchData();

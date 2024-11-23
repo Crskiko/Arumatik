@@ -14,7 +14,7 @@ function Loading() {
         <div className="w-3 h-3 bg-blue rounded-full animate-bounce-seq delay-400"></div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Loading;

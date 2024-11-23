@@ -14,7 +14,9 @@ function ErrorMessage({ error }) {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-beige text-blue">
       <h1 className="text-3xl font-bold mb-4">Oops! Something went wrong.</h1>
-      <p className="text-base mb-10">{error || "An unexpected error occurred."}</p>
+      <p className="text-base mb-10">
+        {error || "An unexpected error occurred."}
+      </p>
 
       <Button
         label="Reload Page"

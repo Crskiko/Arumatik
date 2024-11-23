@@ -12,8 +12,14 @@ import PropTypes from "prop-types";
 function Heading({ text, desc, primary = true }) {
   return (
     <div className="text-center w-[36rem]">
-      <h1 className={`${primary ? "text-blue" : "text-white"} text-2xl font-bold mb-3`}>{text}</h1>
-      <p className={`${primary ? "text-black" : "text-white"} text-sm`}>{desc}</p>
+      <h1
+        className={`${primary ? "text-blue" : "text-white"} text-2xl font-bold mb-3`}
+      >
+        {text}
+      </h1>
+      <p className={`${primary ? "text-black" : "text-white"} text-sm`}>
+        {desc}
+      </p>
     </div>
   );
 }
@@ -21,7 +27,7 @@ function Heading({ text, desc, primary = true }) {
 Heading.propTypes = {
   text: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
-  primary: PropTypes.bool
-}
+  primary: PropTypes.bool,
+};
 
 export default Heading;
