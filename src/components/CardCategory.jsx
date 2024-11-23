@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 /**
  * A card component that displays product categories.
@@ -12,11 +13,14 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element} - The rendered category card component.
  */
 function CardCategory({ name, desc, img, primary, reverse }) {
+  const navigate = useNavigate();
+
   return (
     <div
       className={`flex ${reverse ? "flex-row-reverse pl-9" : "flex-row pr-9"} 
       ${primary ? "bg-blue shadow-xl" : "bg-beige shadow-sm"} items-center justify-between 
       w-[32rem] h-60 rounded-3xl transform transition duration-300 hover:scale-105 cursor-pointer`}
+      onClick={() => navigate('/products', { state: { category: name } })}
     >
       <img
         src={img}
