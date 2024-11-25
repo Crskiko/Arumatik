@@ -16,7 +16,7 @@ function Dropdown({ selected, options, setSeries }) {
 
   return (
     <div className="relative w-80">
-      <div
+      <button
         className={`${
           isOpen
             ? "rounded-t-xl bg-white border-2 border-b-0 border-beige"
@@ -30,20 +30,23 @@ function Dropdown({ selected, options, setSeries }) {
           alt="arrow-icon"
           className={isOpen ? "rotate-180" : "rotate-0"}
         />
-      </div>
+      </button>
 
       {isOpen && (
         <ul className="absolute z-10 border-2 border-t-0 border-beige bg-white rounded-b-xl cursor-pointer w-full">
-          {options.map((value, index) => (
+          {options.map((value) => (
             <li
-              key={index}
+              key={value}
               className="text-sm px-6 py-3 transition-all duration-300 hover:bg-beige"
-              onClick={() => {
-                setSeries(value);
-                setIsOpen(false);
-              }}
             >
-              {value}
+              <button
+                onClick={() => {
+                  setSeries(value);
+                  setIsOpen(false);
+                }}
+              >
+                {value}
+              </button>
             </li>
           ))}
         </ul>
