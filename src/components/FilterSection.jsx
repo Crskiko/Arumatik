@@ -24,20 +24,23 @@ function FilterSection({
   setSeries,
 }) {
   return (
-    <section className="h-fit pt-32">
-      <Heading
-        text="Browse Our Products"
-        desc="Discover our selection of essential industrial products, designed to 
+    <section className="h-fit">
+      <div className="pt-32 py-16 bg-blue w-full flex justify-center">
+        <Heading
+          text="Browse Our Products"
+          desc="Discover our selection of essential industrial products, designed to 
           streamline and enhance your operations."
-      ></Heading>
+          primary={false}
+        ></Heading>
+      </div>
 
-      <div className="flex justify-between w-full mt-16 mb-10 px-24">
+      <div className="flex justify-between w-full my-10 px-24">
         <div className="flex items-center gap-8">
-          {categories.map((value, index) => (
-            <div key={index}>
+          {categories.map(value => (
+            <div key={value}>
               <Tab
                 name={value}
-                isActive={value === selectedCategory ? true : false}
+                isActive={value === selectedCategory}
                 onClick={() => setCategory(value)}
               ></Tab>
             </div>

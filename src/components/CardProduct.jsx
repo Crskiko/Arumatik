@@ -14,9 +14,10 @@ import convertToSlug from "../utils/convertToSlug";
  */
 function CardProduct({ product, onClick }) {
   return (
-    <div
+    <button
       className="group flex flex-col items-center justify-center w-fit bg-white p-5 cursor-pointer
-      rounded-3xl shadow-sm transform transition-all duration-300 hover:scale-105"
+      rounded-3xl shadow-sm transform transition-all duration-200 hover:scale-105 
+      hover:bg-blue hover:text-white"
       onClick={onClick}
     >
       <img
@@ -36,7 +37,7 @@ function CardProduct({ product, onClick }) {
           <img src={ArrowIcon} alt="arrow-icon" className="ml-[0.07rem] w-2" />
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -45,6 +46,7 @@ CardProduct.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default CardProduct;

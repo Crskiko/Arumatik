@@ -18,8 +18,8 @@ function ClientSection() {
         <img
           src="/images/logos/logo-garuda.png"
           alt="logo-garuda"
-          className="max-w-24 opacity-20 transform 
-          transition-all duration-500 cursor-default hover:opacity-100 hover:scale-105"
+          className="max-w-24 opacity-20 transform transition-all duration-500 
+          cursor-default hover:opacity-100 hover:scale-105"
         />
         <img
           src="/images/logos/logo-indofood.png"

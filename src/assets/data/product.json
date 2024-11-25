@@ -909,6 +909,32 @@
       "static_load": null,
       "dynamic_load": null,
       "racking_load": null
+    },
+    {
+      "name": "Blue-Gel",
+      "series": null,
+      "category": "Silica Gel",
+      "image": "gels/Blue-Gel.jpg",
+      "size": "1/2/5/10/100 mm",
+      "material": "Silica",
+      "type": null,
+      "color": "Blue",
+      "static_load": null,
+      "dynamic_load": null,
+      "racking_load": null
+    },
+    {
+      "name": "White-Gel",
+      "series": null,
+      "category": "Silica Gel",
+      "image": "gels/White-Gel.jpeg",
+      "size": "1/2/5/10/100 mm",
+      "material": "Silica",
+      "type": null,
+      "color": "White",
+      "static_load": null,
+      "dynamic_load": null,
+      "racking_load": null
     }
   ]
 }

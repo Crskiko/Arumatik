@@ -10,12 +10,12 @@ import Button from "./Button";
 function Navbar() {
   return (
     <nav className="fixed z-50 flex items-center justify-between bg-white w-screen shadow-sm py-4 px-28">
-      <HashLink to={"/#hero"}>
+      <HashLink to={"/"}>
         <img src={Logo} alt="logo" />
       </HashLink>
 
       <ul className="flex items-center gap-10">
-        <HashLink to={"/#hero"}>
+        <HashLink to={"/"}>
           <li className="text-sm cursor-pointer hover:text-blue hover:font-bold">
             Home
           </li>

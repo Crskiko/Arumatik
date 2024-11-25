@@ -39,12 +39,13 @@ function HeroSection({ navigate, scroll }) {
         />
       </div>
 
-      <div
+      <button
         className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-10"
         onMouseOver={scroll}
+        onFocus={scroll}
       >
         <img src={ArrowV2Icon} alt="arrow-icon" className="ml-[0.05rem] w-4" />
-      </div>
+      </button>
     </section>
   );
 }
