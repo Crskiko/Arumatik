@@ -2,8 +2,6 @@
 
 This is a React.js Vite project designed to showcase the products offered by the company. It includes static data stored in JSON files and uses React Context API and custom hooks for state management.
 
----
-
 ## Table of Contents
 
 1. [Project Overview](#project-overview)  
@@ -16,8 +14,6 @@ This is a React.js Vite project designed to showcase the products offered by the
 8. [Utils Functions](#utils-functions)   
 9. [Generate Documentation](#generate-documentation)  
 10. [License](#license)
-
----
 
 ## Project Overview
 
@@ -33,8 +29,6 @@ Encourage customers to order products by integrating **Call-to-Action (CTA)** bu
   - In the Navbar for easy access.  
   - On the Product Detail Page for direct action.  
 
----
-
 ## Features
 
 - Static product data stored in JSON files.  
@@ -44,8 +38,6 @@ Encourage customers to order products by integrating **Call-to-Action (CTA)** bu
 - Responsive and user-friendly design.  
 - Direct WhatsApp link for customer inquiries and orders.
 
----
-
 ## Technology Stack
 
 - **Frontend:** React.js with Vite  
@@ -54,8 +46,6 @@ Encourage customers to order products by integrating **Call-to-Action (CTA)** bu
 - **Styling:** Tailwind CSS  
 - **Prop Validation:** PropTypes
 - **Data Handling:** Static JSON files  
-
----
 
 ## Setup Instructions
 
@@ -80,8 +70,6 @@ Encourage customers to order products by integrating **Call-to-Action (CTA)** bu
    http://localhost:5173
    ```
 
----
-
 ## Project Structure
 
 ```
@@ -102,14 +90,10 @@ project/
 │   └── main.jsx         # Main application entry point
 ```
 
----
-
 ## Data Management
 
 - **Static JSON Files:** All product-related data is stored in JSON files located in the `data/` directory.  
 - **Context API:** Used for managing global state across the application.
-
----
 
 ## Custom Hooks
 
@@ -119,16 +103,12 @@ List your custom hooks and their purpose here:
 - `useScrollTop`: Scrolls the window to the top when the route changes.
 - `useUniqueValue`: Extracts unique values from an array of objects.
 
----
-
 ## Utils Functions
 
 List utility functions and their purposes:  
 - `convertToSlug`: Converts a given text string into a URL-friendly slug.
 - `convertToTitle`: Converts a JSON key to a title case string.
 - `filterData`: Filters products by category and series.
-
----
 
 ## Generate Documentations
 
@@ -143,8 +123,6 @@ To generate the JSDoc documentation for this project, follow these steps:
    ```
 3. View the Documentation:  
    Open `docs/index.html` file in your browser.
-
----
 
 ## License
 
