@@ -15,7 +15,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
  * Container for the Product List page.
  * Fetches and filters product data, and handles display logic for product categories and series.
  *
- * @returns {JSX.Element} The rendered product list component.
+ * @returns {JSX.Element} - The rendered product list component.
  */
 function ProductListContainer() {
   const products = useProductContext();

@@ -10,7 +10,7 @@ import Home from "./pages/Home";
  * and individual product details. The routes are rendered within a 
  * `BrowserRouter` component.
  * 
- * @returns {JSX.Element} The rendered JSX of the main application with routing.
+ * @returns {JSX.Element} - The rendered JSX of the main application with routing.
  */
 function App() {
   return (

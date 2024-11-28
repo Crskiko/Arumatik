@@ -10,7 +10,7 @@ import { ProductProvider } from "./contexts/ProductContext.jsx";
  * This file renders the `App` component inside the `StrictMode` wrapper and 
  * wraps it in the `ProductProvider` context provider to manage product-related state.
  * 
- * @returns {void} This function does not return anything as it renders the app to the DOM.
+ * @returns {void} - This function does not return anything as it renders the app to the DOM.
  */
 createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -9,7 +9,7 @@ import Button from "./Button";
  * @param {object} props - Props for the page.
  * @param {string} props.error - The displayed error message.
  * @param {boolean} props.isMobile - Boolean that determines card size.
- * @returns {JSX.Element} The rendered Error page.
+ * @returns {JSX.Element} - The rendered Error page.
  */
 function ErrorMessage({ error, isMobile }) {
   return (

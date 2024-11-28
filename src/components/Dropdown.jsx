@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
  * @param {Array<string>} props.options - Array of series variations.
  * @param {Function} props.setSeries - Callback function triggered when the option is clicked.
  * @param {boolean} props.isMobile - Boolean that determines dropdown size.
- * @returns {JSX.Element} The rendered dropdown component.
+ * @returns {JSX.Element} - The rendered dropdown component.
  */
 function Dropdown({ selected, options, setSeries, isMobile }) {
   const [isOpen, setIsOpen] = useState(false);

@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {object} props - Props for the card.
  * @param {Array} props.products - The object that contains products data.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} The rendered list section.
+ * @returns {JSX.Element} - The rendered list section.
  */
 function ListSection({ products, isMobile }) {
   const navigate = useNavigate();

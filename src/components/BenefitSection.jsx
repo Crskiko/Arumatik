@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the element.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} The rendered benefit section.
+ * @returns {JSX.Element} - The rendered benefit section.
  */
 function BenefitSection({ isMobile }) {
   return (
