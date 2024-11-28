@@ -9,10 +9,10 @@ import PropTypes from "prop-types";
  * @param {object} props - Props for the card.
  * @param {Array} props.categories - Array that contains category names.
  * @param {string} props.selectedCategory - The name of the selected product category.
- * @param {() => void} props.setCategory - Callback function that set selected category.
+ * @param {Function} props.setCategory - Callback function that set selected category.
  * @param {Array} props.series - Array that contains series names.
  * @param {string|null} props.selectedSeries - The name of the selected product series.
- * @param {() => void} props.setSeries - Callback function that set selected series.
+ * @param {Function} props.setSeries - Callback function that set selected series.
  * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered filter section.
  */

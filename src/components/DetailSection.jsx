@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the card.
  * @param {object} props.product - THe object that contains product data.
- * @param {() => void} props.onClick - Callback function triggered when the button is clicked.
+ * @param {Function} props.onClick - Callback function triggered when the button is clicked.
  * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered product detail section.
  */

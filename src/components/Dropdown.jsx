@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {object} props - Props for the card.
  * @param {string|null} props.selected - The name of the selected product series (optional).
  * @param {Array<string>} props.options - Array of series variations.
- * @param {() => void} props.setSeries - Callback function triggered when the option is clicked.
+ * @param {Function} props.setSeries - Callback function triggered when the option is clicked.
  * @param {boolean} props.isMobile - Boolean that determines dropdown size.
  * @returns {JSX.Element} The rendered dropdown component.
  */

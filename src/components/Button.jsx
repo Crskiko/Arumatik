@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the button.
  * @param {string} props.label - The text displayed on the button.
- * @param {() => void} props.onClick - Callback function triggered when the button is clicked.
+ * @param {Function} props.onClick - Callback function triggered when the button is clicked.
  * @param {boolean} props.primary - Boolean that determines the button styling.
  * @param {boolean} props.isMobile - Determines the size of the button.
  * @returns {JSX.Element} - The rendered button component.

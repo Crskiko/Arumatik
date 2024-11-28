@@ -6,8 +6,8 @@ import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
  * Component that displays hero image, heading, and interactive navigation button in home page.
  *
  * @param {object} props - Props for the card.
- * @param {() => void} props.navigate - Callback function for navigation button.
- * @param {() => void} props.scroll - Callback function for scrolling to section.
+ * @param {Function} props.navigate - Callback function for navigation button.
+ * @param {Function} props.scroll - Callback function for scrolling to section.
  * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered hero section.
  */

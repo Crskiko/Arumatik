@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  * @param {string} props.img - Path URL of the image displayed.
  * @param {boolean} props.primary - Boolean value that determines card style.
  * @param {boolean} props.reverse - Boolean value that determines card direction.
- * @param {() => void} props.onClick - Callback function triggered when the card is clicked.
+ * @param {Function} props.onClick - Callback function triggered when the card is clicked.
  * @param {boolean} props.isMobile - Boolean that determines card size.
  * @returns {JSX.Element} - The rendered category card component.
  */
