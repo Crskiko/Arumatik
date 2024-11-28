@@ -23,7 +23,14 @@ function CategorySection({ isMobile }) {
         isMobile={isMobile}
       ></Heading>
 
-      <div className={`grid ${isMobile ? "grid-cols-1 gap-6 mx-6" : "xl:grid-cols-2 gap-8 mx-28 grid-cols-1"} mt-10`}>
+      <div 
+        className={`grid ${
+          isMobile 
+            ? "grid-cols-1 gap-6 mx-6" 
+            : "xl:grid-cols-2 gap-8 mx-28 grid-cols-1"
+          } mt-10`
+        }
+      >
         {category.map((value, index) => (
           <div key={value.name}>
             <CardCategory

@@ -22,7 +22,7 @@ function CardCategory({
   onClick,
   isMobile,
 }) {
-  
+
   const cardDirection = reverse ? "flex-row-reverse" : "flex-row";
   const padding = reverse
     ? isMobile
@@ -57,7 +57,7 @@ function CardCategory({
       <img
         src={img}
         alt="category"
-        className={`overflow-hidden ${imageBorderRadius} ${imageSize}`}
+        className={`overflow-hidden object-cover ${imageBorderRadius} ${imageSize}`}
       />
 
       <div className={`${textColor} ${textAlignment} ${textWidth}`}>
