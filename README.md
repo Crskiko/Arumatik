@@ -1,4 +1,4 @@
-# Company Product Showcase Website
+# Arumatik Website
 
 This is a React.js Vite project designed to showcase the products offered by the company. It includes static data stored in JSON files and uses React Context API and custom hooks for state management.
 
