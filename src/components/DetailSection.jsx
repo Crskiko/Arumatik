@@ -14,9 +14,9 @@ import PropTypes from "prop-types";
  */
 function DetailSection({ product, onClick, isMobile }) {
   return (
-    <section className={`${isMobile ? "mx-6" : "mx-0"} h-fit pt-32 pb-10`}>
+    <section className={`${isMobile ? "mx-6" : "xl:mx-28 mx-12"} h-fit pt-32 pb-10`}>
       <div
-        className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2 gap-16"}`}
+        className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2 xl:gap-16 gap-4"}`}
       >
         <img
           src={`/images/${product.image}`}

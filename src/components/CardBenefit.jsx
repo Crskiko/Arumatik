@@ -13,8 +13,9 @@ import PropTypes from "prop-types";
 function CardBenefit({ name, desc, img, isMobile }) {
   return (
     <div
-      className={`${isMobile ? "px-4 py-6" : "px-5 py-8"} flex flex-col justify-center items-center bg-white shadow-sm w-fit
-      rounded-3xl transform transition duration-300 hover:scale-105 cursor-default`}
+      className={`${isMobile ? "px-4 py-6" : "px-5 py-8"} flex flex-col justify-center items-center 
+      bg-white shadow-sm rounded-3xl h-full transform transition duration-300 
+      hover:scale-105 cursor-default`}
     >
       <img src={img} alt="icon" className={isMobile ? "max-w-16 mb-2" : "max-w-20 mb-5"} />
 

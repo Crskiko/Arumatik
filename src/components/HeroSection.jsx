@@ -15,8 +15,8 @@ function HeroSection({ navigate, scroll, isMobile }) {
   return (
     <section id="hero" className="relative">
       <div
-        className={`flex ${isMobile ? "flex-col px-6" : "flex-row px-28"} 
-        justify-between items-center w-full`}
+        className={`flex ${isMobile ? "flex-col px-6" : "flex-row xl:px-28 px-12"} 
+        justify-between gap-10 items-center w-full`}
       >
         <div className={isMobile ? "text-center" : "w-[34rem]"}>
           <h1 className={`${isMobile ? "text-2xl mb-4" : "text-3xl mb-5"} font-bold text-blue`}>

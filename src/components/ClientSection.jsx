@@ -18,7 +18,10 @@ function ClientSection({ isMobile }) {
         isMobile={isMobile}
       ></Heading>
 
-      <div className="flex flex-wrap justify-center items-center gap-8 w-full px-36 mt-12">
+      <div 
+        className={`flex ${isMobile ? "flex-col" : "flex-row"} justify-center items-center 
+        gap-10 w-full xl:px-28 px-12 mt-12`}
+      >
         <img
           src="/images/logos/logo-garuda.png"
           alt="logo-garuda"

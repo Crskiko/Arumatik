@@ -32,7 +32,7 @@ function Navbar({ isMobile }) {
           <Menu isMobile={isMobile}></Menu>
         </div>
       ) : (
-        <div className="flex items-center justify-between px-28">
+        <div className="flex items-center justify-between xl:px-28 px-12">
           <HashLink to={"/"}>
             <img src={Logo} alt="logo" className="max-w-full" />
           </HashLink>

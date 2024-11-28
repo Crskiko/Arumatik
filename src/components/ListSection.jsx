@@ -15,7 +15,7 @@ function ListSection({ products, isMobile }) {
 
   return (
     <section className="h-fit mb-20">
-      <div className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-4 gap-6"}`}>
+      <div className={`grid ${isMobile ? "sm:grid-cols-2 gap-3 grid-cols-1" : "grid-cols-4 gap-6"} xl:mx-28 mx-12`}>
         {products.map((value) => (
           <div key={value.name}>
             <CardProduct

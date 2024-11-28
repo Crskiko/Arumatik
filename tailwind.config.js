@@ -25,6 +25,9 @@ export default {
         'lg': '4px 4px 8px 0 rgba(0, 0, 0, 0.20)',
         'xl': '4px 4px 12px 0 rgba(0, 0, 0, 0.20)',
       },
+      screens: {
+        'sm': '380px'
+      }
     },
   },
   plugins: [],

@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
  */
 function BenefitSection({ isMobile }) {
   return (
-    <section id="benefit" className="bg-blue">
+    <section id="benefit" className={`${isMobile ? "sm:h-dvh h-fit py-16" : "h-dvh"} bg-blue`}>
       <Heading
         text="Why Choose Us"
         desc="Experience the difference with flexible options, reliable service, and complete 
@@ -22,8 +22,12 @@ function BenefitSection({ isMobile }) {
       ></Heading>
 
       <div 
-        className={`grid ${isMobile ? "grid-cols-2 gap-5 mx-6" : "grid-cols-4 gap-8"} 
-        items-center mt-10`}
+        className={`grid auto-rows-[1fr] items-stretch mt-10 ${
+          isMobile 
+            ? "sm:grid-cols-2 gap-5 mx-6 grid-cols-1" 
+            : "grid-cols-4 xl:gap-8 gap-6 xl:mx-28 mx-12"
+          }
+        `}
       >
         {benefit.map((v) => (
           <div key={v.id}>

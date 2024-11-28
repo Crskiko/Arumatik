@@ -22,7 +22,7 @@ function Dropdown({ selected, options, setSeries, isMobile }) {
     : `${isMobile ? "rounded-lg" : "rounded-xl"} bg-beige`;
 
   return (
-    <div className="relative w-80">
+    <div className="relative sm:w-80 w-60">
       <button
         className={`flex items-center justify-between cursor-pointer w-full 
         ${isMobile ? "px-4 py-2.5" : "px-6 py-3"} ${buttonStateStyle}`}

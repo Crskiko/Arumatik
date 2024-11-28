@@ -18,7 +18,7 @@ function AboutSection({ targetSection, isMobile }) {
         isMobile={isMobile}
       ></Heading>
 
-      <div className={`grid mt-10 ${isMobile ? "grid-cols-1 gap-5 mx-6" : "grid-cols-2 gap-8 mx-28"}`}>
+      <div className={`grid mt-10 ${isMobile ? "grid-cols-1 gap-5 mx-6" : "grid-cols-2 gap-8 xl:mx-28 mx-12"}`}>
         <div
           className={`${
             isMobile

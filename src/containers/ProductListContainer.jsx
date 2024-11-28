@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar";
 import useScrollTop from "../hooks/useScrollTop";
 import FilterSection from "../components/FilterSection";
 import ListSection from "../components/ListSection";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 /**
  * Container for the Product List page.
@@ -27,7 +28,7 @@ function ProductListContainer() {
   } = useFilterData(products);
   const category = useUniqueValue(products, "category");
   const series = useUniqueValue(products, "series");
-  const matches = useMediaQuery("(max-width: 780px)");
+  const matches = useMediaQuery("(max-width: 900px)");
 
   const location = useLocation();
   const { state } = location;

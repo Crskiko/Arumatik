@@ -37,8 +37,11 @@ function FilterSection({
         ></Heading>
       </div>
 
-      <div className={`flex ${isMobile ? "flex-col my-5 px-5 gap-5" : "flex-row my-10 px-24"} justify-between items-center w-full`}>
-        <div className={`flex items-center ${isMobile ? "gap-5" : "gap-8"}`}>
+      <div 
+        className={`flex ${isMobile ? "flex-col my-5 px-5 gap-5" : "flex-row my-10 xl:px-24 px-12"} 
+        justify-between items-center w-full`}
+      >
+        <div className={`flex items-center ${isMobile ? "sm:gap-5 gap-3" : "xl:gap-8 gap-6"}`}>
           {categories.map(value => (
             <div key={value}>
               <Tab
