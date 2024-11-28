@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {string} props.desc - A brief description of the benefit.
  * @param {string} props.img - Path URL of the image displayed.
  * @param {boolean} props.isMobile - Boolean that determines card size.
- * @returns {JSX.Element} - The rendered category card component.
+ * @returns {JSX.Element} The rendered category card component.
  */
 function CardBenefit({ name, desc, img, isMobile }) {
   return (

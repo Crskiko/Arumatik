@@ -6,7 +6,7 @@ import { HashLink } from "react-router-hash-link";
  *
  * @param {object} props - Props for the element.
  * @param {boolean} props.isMobile - Boolean that determines menu size.
- * @returns {JSX.Element} - The rendered menu component.
+ * @returns {JSX.Element} The rendered menu component.
  */
 function Menu({ isMobile }) {
   return (

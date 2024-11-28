@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {string} props.desc - The sub heading text.
  * @param {boolean} [prop.primary=true] - Boolean that determines the text styling. Defaults to `true`.
  * @param {boolean} props.isMobile - Boolean that determines heading size.
- * @returns {JSX.Element} - The rendered heading component.
+ * @returns {JSX.Element} The rendered heading component.
  */
 function Heading({ text, desc, primary = true, isMobile }) {
   return (

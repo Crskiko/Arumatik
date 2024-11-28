@@ -4,7 +4,7 @@
  * @param {Array<Object>} data - The array of product data.
  * @param {string} category - The selected category to filter by.
  * @param {string|null} series - The selected series to filter by (optional).
- * @returns {Array<Object>} - An array of filtered products.
+ * @returns {Array<Object>} An array of filtered products.
  */
 const filterData = (data, category, series) => {
   if (!Array.isArray(data)) return [];

@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {Function} props.onClick - Callback function triggered when the button is clicked.
  * @param {boolean} props.primary - Boolean that determines the button styling.
  * @param {boolean} props.isMobile - Determines the size of the button.
- * @returns {JSX.Element} - The rendered button component.
+ * @returns {JSX.Element} The rendered button component.
  */
 function Button({ label, onClick, primary, isMobile }) {
   return (

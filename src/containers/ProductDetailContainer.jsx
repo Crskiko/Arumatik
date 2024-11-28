@@ -11,7 +11,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
  * Container for the Product Detail page.
  * Fetches and displays product data.
  *
- * @returns {JSX.Element} - The rendered product detail component.
+ * @returns {JSX.Element} The rendered product detail component.
  */
 function ProductDetailContainer() {
   const { productName } = useParams();

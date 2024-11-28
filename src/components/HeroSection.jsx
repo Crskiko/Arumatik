@@ -9,7 +9,7 @@ import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
  * @param {Function} props.navigate - Callback function for navigation button.
  * @param {Function} props.scroll - Callback function for scrolling to section.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} - The rendered hero section.
+ * @returns {JSX.Element} The rendered hero section.
  */
 function HeroSection({ navigate, scroll, isMobile }) {
   return (

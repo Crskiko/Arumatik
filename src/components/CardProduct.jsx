@@ -11,7 +11,7 @@ import convertToSlug from "../utils/convertToSlug";
  * @param {string} props.product.image - The path URL of the product image.
  * @param {Function} props.onClick - Callback function triggered when the card is clicked.
  * @param {boolean} props.isMobile - Boolean that determines card size.
- * @returns {JSX.Element} - The rendered product card component.
+ * @returns {JSX.Element} The rendered product card component.
  */
 function CardProduct({ product, onClick, isMobile }) {
   return (

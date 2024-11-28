@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
  * @param {string|null} props.selectedSeries - The name of the selected product series.
  * @param {Function} props.setSeries - Callback function that set selected series.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} - The rendered filter section.
+ * @returns {JSX.Element} The rendered filter section.
  */
 function FilterSection({
   categories,

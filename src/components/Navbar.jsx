@@ -9,7 +9,7 @@ import Menu from "./Menu";
  *
  * @param {object} props - Props for the element.
  * @param {boolean} props.isMobile - Boolean that determines navbar size.
- * @returns {JSX.Element} - The rendered navbar component.
+ * @returns {JSX.Element} The rendered navbar component.
  */
 function Navbar({ isMobile }) {
   return (

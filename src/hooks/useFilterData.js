@@ -5,7 +5,7 @@ import filterData from "../utils/filterData";
  * Custom hook to filter products by category and series.
  *
  * @param {Array<Object>} data - The array of product data.
- * @returns {Object} - Contains the filtered products, category, series, and setters.
+ * @returns {Object} Contains the filtered products, category, series, and setters.
  */
 const useFilterData = (data) => {
   const [category, setCategory] = useState("Plastic Pallet");

@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
  * @param {boolean} props.reverse - Boolean value that determines card direction.
  * @param {Function} props.onClick - Callback function triggered when the card is clicked.
  * @param {boolean} props.isMobile - Boolean that determines card size.
- * @returns {JSX.Element} - The rendered category card component.
+ * @returns {JSX.Element} The rendered category card component.
  */
 function CardCategory({
   name,

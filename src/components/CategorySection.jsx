@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the element.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} - The rendered category section.
+ * @returns {JSX.Element} The rendered category section.
  */
 function CategorySection({ isMobile }) {
   const navigate = useNavigate();

@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the element.
  * @param {boolean} props.isMobile - Boolean that determines footer size.
- * @returns {JSX.Element} - The rendered footer component.
+ * @returns {JSX.Element} The rendered footer component.
  */
 function Footer({ isMobile }) {
   return (

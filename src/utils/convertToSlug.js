@@ -5,7 +5,7 @@
  * and replaces spaces with hyphens.
  *
  * @param {string} text - The input text to be converted into a slug.
- * @returns {string} - The URL-friendly slug generated from the input text.
+ * @returns {string} The URL-friendly slug generated from the input text.
  */
 const convertToSlug = (text) => {
   return text

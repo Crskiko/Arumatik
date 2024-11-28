@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
  * @param {object} props.product - THe object that contains product data.
  * @param {Function} props.onClick - Callback function triggered when the button is clicked.
  * @param {boolean} props.isMobile - Boolean that determines section size.
- * @returns {JSX.Element} - The rendered product detail section.
+ * @returns {JSX.Element} The rendered product detail section.
  */
 function DetailSection({ product, onClick, isMobile }) {
   return (

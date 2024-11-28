@@ -14,7 +14,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
  * Main container for the home page.
  * Fetches data, handles error states, and organizes sections.
  *
- * @returns {JSX.Element} - The rendered home component.
+ * @returns {JSX.Element} The rendered home component.
  */
 function HomeContainer() {
   const targetSection = useRef(null);

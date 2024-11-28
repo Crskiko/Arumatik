@@ -5,7 +5,7 @@ import { useMemo } from "react";
  *
  * @param {Array<Object>} data - Array of product objects.
  * @param {string} key - The key whose unique values are needed (e.g., "category", "series").
- * @returns {Array<string>} - Array of unique values for the specified key.
+ * @returns {Array<string>} Array of unique values for the specified key.
  */
 const useUniqueValue = (data, key) => {
   const result = useMemo(() => {

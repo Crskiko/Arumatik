@@ -2,7 +2,7 @@
  * Converts a JSON key to a title case string.
  *
  * @param {string} key - The JSON key to convert.
- * @returns {string} - The formatted title case string.
+ * @returns {string} The formatted title case string.
  */
 function convertToTitle(key) {
   return key

@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
  * @param {boolean} props.isActive - Boolean value that shows tab activation statue.
  * @param {Function} props.onClick - Callback function triggered when the tab is clicked.
  * @param {boolean} props.isMobile - Boolean that determines tab size.
- * @returns {JSX.Element} - The rendered tab component.
+ * @returns {JSX.Element} The rendered tab component.
  */
 function Tab({ name, isActive = false, onClick, isMobile }) {
   const textStyle = isActive

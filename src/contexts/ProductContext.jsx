@@ -13,7 +13,7 @@ const ProductContext = createContext();
  *
  * @param {Object} props - The props of the component.
  * @param {React.ReactNode} props.children - The child components that will consume the context value.
- * @returns {React.ReactNode} - The wrapped children components with the provided context value.
+ * @returns {React.ReactNode} The wrapped children components with the provided context value.
  */
 export const ProductProvider = ({ children }) => {
   const value = useMemo(() => {
@@ -33,7 +33,7 @@ ProductProvider.propTypes = {
  * Custom hook to access the product context.
  * This hook returns the current product data.
  *
- * @returns {Array} - The product context value containing a list of products.
+ * @returns {Array} The product context value containing a list of products.
  */
 export const useProductContext = () => {
   const context = useContext(ProductContext);

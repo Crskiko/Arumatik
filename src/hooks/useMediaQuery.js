@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
  * and updates its state accordingly.
  *
  * @param {string} query - The media query to evaluate (e.g., `(min-width: 768px)`).
- * @returns {boolean} - A boolean indicating whether the media query matches the current viewport.
+ * @returns {boolean} A boolean indicating whether the media query matches the current viewport.
  */
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
