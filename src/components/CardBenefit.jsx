@@ -7,19 +7,20 @@ import PropTypes from "prop-types";
  * @param {string} props.name - The benefit displayed.
  * @param {string} props.desc - A brief description of the benefit.
  * @param {string} props.img - Path URL of the image displayed.
+ * @param {boolean} props.isMobile - Boolean that determines card size.
  * @returns {JSX.Element} - The rendered category card component.
  */
-function CardBenefit({ name, desc, img }) {
+function CardBenefit({ name, desc, img, isMobile }) {
   return (
     <div
-      className="flex flex-col justify-center items-center bg-white shadow-sm w-fit px-5 py-8 
-      rounded-3xl transform transition duration-300 hover:scale-105 cursor-default"
+      className={`${isMobile ? "px-4 py-6" : "px-5 py-8"} flex flex-col justify-center items-center bg-white shadow-sm w-fit
+      rounded-3xl transform transition duration-300 hover:scale-105 cursor-default`}
     >
-      <img src={img} alt="icon" className="max-w-20 mb-5" />
+      <img src={img} alt="icon" className={isMobile ? "max-w-16 mb-2" : "max-w-20 mb-5"} />
 
-      <div className="text-center w-52">
-        <h3 className="text-lg font-bold mb-2">{name}</h3>
-        <p className="text-sm">{desc}</p>
+      <div className="text-center">
+        <h3 className={`${isMobile ? "text-sm mb-1" : "text-lg mb-2"} font-bold`}>{name}</h3>
+        <p className={isMobile ? "text-xs" :"text-sm"}>{desc}</p>
       </div>
     </div>
   );
@@ -29,6 +30,7 @@ CardBenefit.propTypes = {
   name: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default CardBenefit;

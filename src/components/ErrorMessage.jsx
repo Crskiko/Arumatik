@@ -8,13 +8,14 @@ import Button from "./Button";
  *
  * @param {object} props - Props for the page.
  * @param {string} props.error - The displayed error message.
+ * @param {boolean} props.isMobile - Boolean that determines card size.
  * @returns {JSX.Element} The rendered Error page.
  */
-function ErrorMessage({ error }) {
+function ErrorMessage({ error, isMobile }) {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-beige text-blue">
-      <h1 className="text-3xl font-bold mb-4">Oops! Something went wrong.</h1>
-      <p className="text-base mb-10">
+    <div className="flex flex-col items-center justify-center h-screen bg-beige text-blue text-center">
+      <h1 className={`${isMobile ? "text-2xl mb-3" : "text-3xl mb-4"} font-bold`}>Oops! Something went wrong.</h1>
+      <p className={isMobile ? "text-xs mb-5" : "text-base mb-10"}>
         {error || "An unexpected error occurred."}
       </p>
 
@@ -22,6 +23,7 @@ function ErrorMessage({ error }) {
         label="Reload Page"
         onClick={() => window.location.reload()}
         primary={true}
+        isMobile={isMobile}
       ></Button>
     </div>
   );
@@ -29,6 +31,7 @@ function ErrorMessage({ error }) {
 
 ErrorMessage.propTypes = {
   error: PropTypes.string.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default ErrorMessage;

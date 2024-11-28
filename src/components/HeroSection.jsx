@@ -8,18 +8,22 @@ import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
  * @param {object} props - Props for the card.
  * @param {() => void} props.navigate - Callback function for navigation button.
  * @param {() => void} props.scroll - Callback function for scrolling to section.
+ * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered hero section.
  */
-function HeroSection({ navigate, scroll }) {
+function HeroSection({ navigate, scroll, isMobile }) {
   return (
     <section id="hero" className="relative">
-      <div className="flex justify-between items-center w-full px-28">
-        <div className="w-[34rem]">
-          <h1 className="text-3xl font-bold text-blue mb-5">
+      <div
+        className={`flex ${isMobile ? "flex-col px-6" : "flex-row px-28"} 
+        justify-between items-center w-full`}
+      >
+        <div className={isMobile ? "text-center" : "w-[34rem]"}>
+          <h1 className={`${isMobile ? "text-2xl mb-4" : "text-3xl mb-5"} font-bold text-blue`}>
             Efficient, Sustainable Pallet Solutions for Every Need
           </h1>
 
-          <p className="text-sm mb-16">
+          <p className={isMobile ? "text-xs mb-6" : "text-sm mb-16"}>
             From logistics hubs to factories, we provide high-quality pallet
             racks with flexible rental and purchase options, including delivery
             and comprehensive warranties across Java.
@@ -29,13 +33,18 @@ function HeroSection({ navigate, scroll }) {
             label="Explore Products"
             onClick={navigate}
             primary={false}
+            isMobile={isMobile}
           ></Button>
         </div>
 
         <img
           src="/images/sample.jpg"
           alt="hero-img"
-          className="w-[26rem] h-[26rem] overflow-hidden rounded-[2.5rem]"
+          className={`${
+            isMobile 
+              ? "w-80 h-80 rounded-2xl mt-10" 
+              : "w-[26rem] h-[26rem] rounded-[2.5rem]"
+          } overflow-hidden`}
         />
       </div>
 
@@ -53,6 +62,7 @@ function HeroSection({ navigate, scroll }) {
 HeroSection.propTypes = {
   navigate: PropTypes.func.isRequired,
   scroll: PropTypes.func.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default HeroSection;

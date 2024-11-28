@@ -13,6 +13,7 @@ import PropTypes from "prop-types";
  * @param {Array} props.series - Array that contains series names.
  * @param {string|null} props.selectedSeries - The name of the selected product series.
  * @param {() => void} props.setSeries - Callback function that set selected series.
+ * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered filter section.
  */
 function FilterSection({
@@ -22,26 +23,29 @@ function FilterSection({
   series,
   selectedSeries,
   setSeries,
+  isMobile
 }) {
   return (
     <section className="h-fit">
-      <div className="pt-32 py-16 bg-blue w-full flex justify-center">
+      <div className={`${isMobile ? "pb-10" : "pb-16"} pt-32 bg-blue w-full flex justify-center`}>
         <Heading
           text="Browse Our Products"
           desc="Discover our selection of essential industrial products, designed to 
           streamline and enhance your operations."
           primary={false}
+          isMobile={isMobile}
         ></Heading>
       </div>
 
-      <div className="flex justify-between w-full my-10 px-24">
-        <div className="flex items-center gap-8">
+      <div className={`flex ${isMobile ? "flex-col my-5 px-5 gap-5" : "flex-row my-10 px-24"} justify-between items-center w-full`}>
+        <div className={`flex items-center ${isMobile ? "gap-5" : "gap-8"}`}>
           {categories.map(value => (
             <div key={value}>
               <Tab
                 name={value}
                 isActive={value === selectedCategory}
                 onClick={() => setCategory(value)}
+                isMobile={isMobile}
               ></Tab>
             </div>
           ))}
@@ -52,6 +56,7 @@ function FilterSection({
             selected={selectedSeries}
             options={series}
             setSeries={setSeries}
+            isMobile={isMobile}
           ></Dropdown>
         )}
       </div>
@@ -66,6 +71,7 @@ FilterSection.propTypes = {
   series: PropTypes.array.isRequired,
   selectedSeries: PropTypes.string,
   setSeries: PropTypes.func.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default FilterSection;

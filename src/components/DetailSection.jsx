@@ -9,26 +9,33 @@ import PropTypes from "prop-types";
  * @param {object} props - Props for the card.
  * @param {object} props.product - THe object that contains product data.
  * @param {() => void} props.onClick - Callback function triggered when the button is clicked.
+ * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered product detail section.
  */
-function DetailSection({ product, onClick }) {
+function DetailSection({ product, onClick, isMobile }) {
   return (
-    <section className="h-fit pt-32 pb-10">
-      <div className="grid grid-cols-2 gap-16">
+    <section className={`${isMobile ? "mx-6" : "mx-0"} h-fit pt-32 pb-10`}>
+      <div
+        className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2 gap-16"}`}
+      >
         <img
           src={`/images/${product.image}`}
           alt={convertToSlug(product.name)}
-          className="w-[40vw] h-[29rem] object-contain bg-beige rounded-3xl"
+          className={`${
+            isMobile
+              ? "w-full h-auto py-8 rounded-2xl"
+              : "w-[40vw] h-[29rem] rounded-3xl"
+          } object-contain bg-beige mb-6`}
         />
 
-        <div className="w-[39vw]">
+        <div className="w-full">
           <div className="flex justify-between items-center">
-            <div className="mb-8">
-              <p className="text-sm mb-3">{product.category}</p>
-              <h1 className="text-3xl font-bold text-blue mb-1">
+            <div className={isMobile ? "mb-6" : "mb-8"}>
+              <p className={isMobile ? "text-xs mb-2" : "text-sm mb-3"}>{product.category}</p>
+              <h1 className={`${isMobile ? "text-2xl" : "text-3xl"} font-bold text-blue mb-1`}>
                 {product.name}
               </h1>
-              <p className="text-base text-blue">
+              <p className={`${isMobile ? "text-sm" : "text-base"} text-blue`}>
                 {product.series || "No Series"}
               </p>
             </div>
@@ -37,13 +44,14 @@ function DetailSection({ product, onClick }) {
               label="Order Product"
               onClick={onClick}
               primary={false}
+              isMobile={isMobile}
             ></Button>
           </div>
 
-          <div className="bg-beige py-6 px-7 rounded-2xl">
-            <h3 className="text-lg font-bold mb-3">Details</h3>
+          <div className={`${isMobile ? "py-4 px-5" : "py-6 px-7"} bg-beige rounded-2xl`}>
+            <h3 className={`${isMobile ? "text-sm mb-2" : "text-lg mb-3"} font-bold`}>Details</h3>
 
-            <div className="text-base">
+            <div className={isMobile ? "text-xs" : "text-base"}>
               {Object.entries(product)
                 .filter(
                   ([key, _]) => !["series", "category", "image"].includes(key)
@@ -66,6 +74,7 @@ function DetailSection({ product, onClick }) {
 DetailSection.propTypes = {
   product: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default DetailSection;

@@ -13,5 +13,5 @@ body {
 }
 
 section {
-  @apply h-screen flex flex-col items-center justify-center;
+  @apply h-dvh flex flex-col items-center justify-center;
 }

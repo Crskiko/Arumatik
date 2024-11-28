@@ -8,6 +8,7 @@ import AboutSection from "../components/AboutSection";
 import BenefitSection from "../components/BenefitSection";
 import CategorySection from "../components/CategorySection";
 import ClientSection from "../components/ClientSection";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 /**
  * Main container for the home page.
@@ -18,27 +19,29 @@ import ClientSection from "../components/ClientSection";
 function HomeContainer() {
   const targetSection = useRef(null);
   const navigate = useNavigate();
+  const matches = useMediaQuery("(max-width: 780px)");
 
   useScrollTop();
-
+  
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar isMobile={matches}></Navbar>
 
       <HeroSection
         navigate={() => navigate("/products")}
         scroll={() => { if (targetSection.current) targetSection.current.scrollIntoView() }}
+        isMobile={matches}
       ></HeroSection>
 
-      <AboutSection targetSection={targetSection}></AboutSection>
+      <AboutSection targetSection={targetSection} isMobile={matches}></AboutSection>
 
-      <BenefitSection></BenefitSection>
+      <BenefitSection isMobile={matches}></BenefitSection>
 
-      <CategorySection></CategorySection>
+      <CategorySection isMobile={matches}></CategorySection>
       
-      <ClientSection></ClientSection>
+      <ClientSection isMobile={matches}></ClientSection>
 
-      <Footer></Footer>
+      <Footer isMobile={matches}></Footer>
     </div>
   );
 }

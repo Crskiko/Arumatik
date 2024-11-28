@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
  * This hook listens to changes in the current location using `react-router-dom`'s `useLocation`
  * and triggers a scroll to the top of the page.
  *
- * @returns {void} This hook does not return any value.
+ * @returns {void} - This hook does not return any value.
  */
 const useScrollTop = () => {
   const location = useLocation();

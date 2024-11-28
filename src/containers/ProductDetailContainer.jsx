@@ -5,6 +5,7 @@ import { useProductContext } from "../contexts/ProductContext";
 import ErrorMessage from "../components/ErrorMessage";
 import useScrollTop from "../hooks/useScrollTop";
 import DetailSection from "../components/DetailSection";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 /**
  * Container for the Product Detail page.
@@ -16,6 +17,7 @@ function ProductDetailContainer() {
   const { productName } = useParams();
   const products = useProductContext();
   const product = products.find((item) => item.name === productName);
+  const matches = useMediaQuery("(max-width: 780px)");
 
   if (!product)
     return <ErrorMessage error={"Product not found."}></ErrorMessage>;
@@ -24,14 +26,15 @@ function ProductDetailContainer() {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar isMobile={matches}></Navbar>
 
       <DetailSection
         product={product}
         onClick={() => window.open("https://wa.me/6281807319641", "_blank")}
+        isMobile={matches}
       ></DetailSection>
 
-      <Footer></Footer>
+      <Footer isMobile={matches}></Footer>
     </div>
   );
 }

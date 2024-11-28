@@ -27,6 +27,7 @@ function ProductListContainer() {
   } = useFilterData(products);
   const category = useUniqueValue(products, "category");
   const series = useUniqueValue(products, "series");
+  const matches = useMediaQuery("(max-width: 780px)");
 
   const location = useLocation();
   const { state } = location;
@@ -38,11 +39,16 @@ function ProductListContainer() {
   useScrollTop();
 
   if (!products)
-    return <ErrorMessage error={"Products not found."}></ErrorMessage>;
+    return (
+      <ErrorMessage
+        error={"Products not found."}
+        isMobile={matches}
+      ></ErrorMessage>
+    );
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar isMobile={matches}></Navbar>
 
       <FilterSection
         categories={category}
@@ -51,11 +57,12 @@ function ProductListContainer() {
         series={series}
         selectedSeries={selectedSeries}
         setSeries={setSeries}
+        isMobile={matches}
       ></FilterSection>
 
-      <ListSection products={filteredProducts}></ListSection>
+      <ListSection products={filteredProducts} isMobile={matches}></ListSection>
 
-      <Footer></Footer>
+      <Footer isMobile={matches}></Footer>
     </div>
   );
 }

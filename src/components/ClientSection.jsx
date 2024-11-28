@@ -1,20 +1,24 @@
 import Heading from "./Heading";
+import PropTypes from "prop-types";
 
 /**
  * Component that displays logo images in home page.
  *
+ * @param {object} props - Props for the element.
+ * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered client section.
  */
-function ClientSection() {
+function ClientSection({ isMobile }) {
   return (
     <section id="client">
       <Heading
         text="Our Clients"
         desc="Trusted by industry leaders who rely on our quality and commitment to keep their 
           operations running smoothly."
+        isMobile={isMobile}
       ></Heading>
 
-      <div className="flex flex-wrap justify-between items-center w-full px-36 mt-12">
+      <div className="flex flex-wrap justify-center items-center gap-8 w-full px-36 mt-12">
         <img
           src="/images/logos/logo-garuda.png"
           alt="logo-garuda"
@@ -55,5 +59,9 @@ function ClientSection() {
     </section>
   );
 }
+
+ClientSection.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+};
 
 export default ClientSection;

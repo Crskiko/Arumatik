@@ -7,19 +7,21 @@ import PropTypes from "prop-types";
  *
  * @param {object} props - Props for the card.
  * @param {Array} props.products - The object that contains products data.
+ * @param {boolean} props.isMobile - Boolean that determines section size.
  * @returns {JSX.Element} The rendered list section.
  */
-function ListSection({ products }) {
+function ListSection({ products, isMobile }) {
   const navigate = useNavigate();
 
   return (
     <section className="h-fit mb-20">
-      <div className="grid grid-cols-4 gap-6">
+      <div className={`grid ${isMobile ? "grid-cols-2 gap-3" : "grid-cols-4 gap-6"}`}>
         {products.map((value) => (
           <div key={value.name}>
             <CardProduct
               product={value}
               onClick={() => navigate(`/products/${value.name}`)}
+              isMobile={isMobile}
             ></CardProduct>
           </div>
         ))}
@@ -30,6 +32,7 @@ function ListSection({ products }) {
 
 ListSection.propTypes = {
   products: PropTypes.array.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default ListSection;

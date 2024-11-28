@@ -9,22 +9,26 @@ import PropTypes from "prop-types";
  * @param {string|null} props.selected - The name of the selected product series (optional).
  * @param {Array<string>} props.options - Array of series variations.
  * @param {() => void} props.setSeries - Callback function triggered when the option is clicked.
+ * @param {boolean} props.isMobile - Boolean that determines dropdown size.
  * @returns {JSX.Element} The rendered dropdown component.
  */
-function Dropdown({ selected, options, setSeries }) {
+function Dropdown({ selected, options, setSeries, isMobile }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const buttonStateStyle = isOpen
+    ? `${
+        isMobile ? "rounded-t-lg" : "rounded-t-xl"
+      } bg-white border-2 border-b-0 border-beige`
+    : `${isMobile ? "rounded-lg" : "rounded-xl"} bg-beige`;
 
   return (
     <div className="relative w-80">
       <button
-        className={`${
-          isOpen
-            ? "rounded-t-xl bg-white border-2 border-b-0 border-beige"
-            : "rounded-xl bg-beige"
-        } flex items-center justify-between px-6 py-3 cursor-pointer`}
-        onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
+        className={`flex items-center justify-between cursor-pointer w-full 
+        ${isMobile ? "px-4 py-2.5" : "px-6 py-3"} ${buttonStateStyle}`}
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <p className="text-base">{selected}</p>
+        <p className={isMobile ? "text-sm" : "text-base"}>{selected}</p>
         <img
           src={ArrowDownIcon}
           alt="arrow-icon"
@@ -33,11 +37,18 @@ function Dropdown({ selected, options, setSeries }) {
       </button>
 
       {isOpen && (
-        <ul className="absolute z-10 border-2 border-t-0 border-beige bg-white rounded-b-xl cursor-pointer w-full">
+        <ul
+          className={`absolute z-10 border-2 border-t-0 border-beige bg-white cursor-pointer 
+          ${isMobile ? "rounded-b-lg" : "rounded-b-xl"} w-full`}
+        >
           {options.map((value) => (
             <li
               key={value}
-              className="text-sm px-6 py-3 transition-all duration-300 hover:bg-beige"
+              className={`${
+                isMobile 
+                  ? "text-xs px-4 py-2.5" 
+                  : "text-sm px-6 py-3"
+              } transition-all duration-300 hover:bg-beige`}
             >
               <button
                 onClick={() => {
@@ -59,6 +70,7 @@ Dropdown.propTypes = {
   selected: PropTypes.string,
   options: PropTypes.array.isRequired,
   setSeries: PropTypes.func.isRequired,
+  isMobile: PropTypes.bool.isRequired,
 };
 
 export default Dropdown;
