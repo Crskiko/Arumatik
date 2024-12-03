@@ -6,6 +6,8 @@ import ErrorMessage from "../components/ErrorMessage";
 import useScrollTop from "../hooks/useScrollTop";
 import DetailSection from "../components/DetailSection";
 import useMediaQuery from "../hooks/useMediaQuery";
+import React, { Suspense } from "react";
+import Loading from "../components/Loading";
 
 /**
  * Container for the Product Detail page.
@@ -16,11 +18,13 @@ import useMediaQuery from "../hooks/useMediaQuery";
 function ProductDetailContainer() {
   const { productName } = useParams();
   const products = useProductContext();
-  const product = products.find((item) => item.name === productName);
+  const product = products.data.find((item) => item.name === productName);
   const matches = useMediaQuery("(max-width: 780px)");
 
+  const DetailSection = React.lazy(() => import("../components/DetailSection"));
+
   if (!product)
-    return <ErrorMessage error={"Product not found."}></ErrorMessage>;
+    return <ErrorMessage error={"Product not found."} isMobile={matches}></ErrorMessage>;
 
   useScrollTop();
 
@@ -28,11 +32,13 @@ function ProductDetailContainer() {
     <div>
       <Navbar isMobile={matches}></Navbar>
 
-      <DetailSection
-        product={product}
-        onClick={() => window.open("https://wa.me/6281807319641", "_blank")}
-        isMobile={matches}
-      ></DetailSection>
+      <Suspense fallback={<Loading></Loading>}>
+        <DetailSection
+          product={product}
+          onClick={() => window.open("https://wa.me/6281807319641", "_blank")}
+          isMobile={matches}
+        ></DetailSection>
+      </Suspense>
 
       <Footer isMobile={matches}></Footer>
     </div>

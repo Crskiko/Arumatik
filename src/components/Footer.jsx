@@ -24,23 +24,24 @@ function Footer({ isMobile }) {
         src={Logo}
         alt="logo"
         className={isMobile ? "max-w-[35%]" : "max-w-full"}
+        loading="lazy"
       />
 
       {isMobile ? (
         <div className="mt-4">
           <div className="flex flex-col items-center justify-end gap-3">
             <div className="flex items-center gap-2">
-              <img src={MailIcon} alt="mail-icon" />
+              <img src={MailIcon} alt="mail-icon" loading="lazy" />
               <p className="text-xs">amrpalletplastik@gmail.com</p>
             </div>
 
             <div className="flex gap-5 justify-center">
               <div className="flex items-center gap-2">
-                <img src={PhoneIcon} alt="phone-icon" />
+                <img src={PhoneIcon} alt="phone-icon" loading="lazy" />
                 <p className="text-xs">087778914119</p>
               </div>
               <div className="flex items-center gap-2">
-                <img src={WAIcon} alt="wa-icon" />
+                <img src={WAIcon} alt="wa-icon" loading="lazy" />
                 <p className="text-xs">081807319641</p>
               </div>
             </div>
@@ -50,15 +51,15 @@ function Footer({ isMobile }) {
         <div>
           <div className="flex items-center justify-end gap-9">
             <div className="flex items-center gap-2">
-              <img src={MailIcon} alt="mail-icon" />
+              <img src={MailIcon} alt="mail-icon" loading="lazy" />
               <p className="text-xs">amrpalletplastik@gmail.com</p>
             </div>
             <div className="flex items-center gap-2">
-              <img src={PhoneIcon} alt="phone-icon" />
+              <img src={PhoneIcon} alt="phone-icon" loading="lazy" />
               <p className="text-xs">087778914119</p>
             </div>
             <div className="flex items-center gap-2">
-              <img src={WAIcon} alt="wa-icon" />
+              <img src={WAIcon} alt="wa-icon" loading="lazy" />
               <p className="text-xs">081807319641</p>
             </div>
           </div>

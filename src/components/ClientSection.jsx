@@ -23,40 +23,46 @@ function ClientSection({ isMobile }) {
         gap-10 w-full xl:px-28 px-12 mt-12`}
       >
         <img
-          src="/images/logos/logo-garuda.png"
+          src="/images/logos/logo-garuda.webp"
           alt="logo-garuda"
           className="max-w-24 opacity-20 transform transition-all duration-500 
           cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
         <img
-          src="/images/logos/logo-indofood.png"
+          src="/images/logos/logo-indofood.webp"
           alt="logo-indofood"
           className="max-w-20 opacity-20 transform transition-all duration-500 
             cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
         <img
-          src="/images/logos/logo-unilever.png"
+          src="/images/logos/logo-unilever.webp"
           alt="logo-unilever"
           className="max-w-16 opacity-20 transform transition-all duration-500 
             cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
         <img
-          src="/images/logos/logo-p&g.png"
+          src="/images/logos/logo-p&g.webp"
           alt="logo-p&g"
           className="max-w-24 opacity-20 transform transition-all duration-500 
             cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
         <img
-          src="/images/logos/logo-toyota.png"
+          src="/images/logos/logo-toyota.webp"
           alt="logo-toyota"
           className="max-w-20 opacity-20 transform transition-all duration-500 
             cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
         <img
-          src="/images/logos/logo-dover.png"
+          src="/images/logos/logo-dover.webp"
           alt="logo-dover"
           className="max-w-36 opacity-20 transform transition-all duration-500 
             cursor-default hover:opacity-100 hover:scale-105"
+          loading="lazy"
         />
       </div>
     </section>

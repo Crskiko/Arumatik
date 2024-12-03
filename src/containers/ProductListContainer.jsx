@@ -3,13 +3,12 @@ import { useProductContext } from "../contexts/ProductContext";
 import useFilterData from "../hooks/useFilterData";
 import useUniqueValue from "../hooks/useUniqueValue";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import useScrollTop from "../hooks/useScrollTop";
-import FilterSection from "../components/FilterSection";
-import ListSection from "../components/ListSection";
 import useMediaQuery from "../hooks/useMediaQuery";
+import Loading from "../components/Loading";
 
 /**
  * Container for the Product List page.
@@ -25,10 +24,13 @@ function ProductListContainer() {
     setCategory,
     series: selectedSeries,
     setSeries,
-  } = useFilterData(products);
-  const category = useUniqueValue(products, "category");
-  const series = useUniqueValue(products, "series");
+  } = useFilterData(products.data);
+  const category = useUniqueValue(products.data, "category");
+  const series = useUniqueValue(products.data, "series");
   const matches = useMediaQuery("(max-width: 900px)");
+
+  const FilterSection = React.lazy(() => import("../components/FilterSection"));
+  const ListSection = React.lazy(() => import("../components/ListSection"));
 
   const location = useLocation();
   const { state } = location;
@@ -51,17 +53,22 @@ function ProductListContainer() {
     <div>
       <Navbar isMobile={matches}></Navbar>
 
-      <FilterSection
-        categories={category}
-        selectedCategory={selectedCategory}
-        setCategory={setCategory}
-        series={series}
-        selectedSeries={selectedSeries}
-        setSeries={setSeries}
-        isMobile={matches}
-      ></FilterSection>
+      <Suspense fallback={<Loading></Loading>}>
+        <FilterSection
+          categories={category}
+          selectedCategory={selectedCategory}
+          setCategory={setCategory}
+          series={series}
+          selectedSeries={selectedSeries}
+          setSeries={setSeries}
+          isMobile={matches}
+        ></FilterSection>
 
-      <ListSection products={filteredProducts} isMobile={matches}></ListSection>
+        <ListSection
+          products={filteredProducts}
+          isMobile={matches}
+        ></ListSection>
+      </Suspense>
 
       <Footer isMobile={matches}></Footer>
     </div>

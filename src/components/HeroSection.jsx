@@ -38,13 +38,14 @@ function HeroSection({ navigate, scroll, isMobile }) {
         </div>
 
         <img
-          src="/images/home.jpg"
+          src="/images/home.webp"
           alt="hero-img"
           className={`${
             isMobile 
               ? "w-80 h-80 rounded-2xl mt-10" 
               : "w-[26rem] h-[26rem] rounded-[2.5rem]"
           } overflow-hidden object-cover`}
+          loading="eager"
         />
       </div>
 

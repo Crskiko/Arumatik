@@ -10,22 +10,20 @@ import { HashLink } from "react-router-hash-link";
  */
 function Menu({ isMobile }) {
   return (
-    <ul className={`${isMobile ? "text-xs" : "text-sm"} flex items-center gap-10`}>
-      <HashLink to={"/"}>
-        <li className="cursor-pointer hover:text-blue hover:font-bold">Home</li>
-      </HashLink>
+    <ul
+      className={`${isMobile ? "text-xs" : "text-sm"} flex items-center gap-10`}
+    >
+      <li className="cursor-pointer hover:text-blue hover:font-bold">
+        <HashLink to={"/"}>Home</HashLink>
+      </li>
 
-      <HashLink to={"/#about"}>
-        <li className="cursor-pointer hover:text-blue hover:font-bold">
-          About
-        </li>
-      </HashLink>
+      <li className="cursor-pointer hover:text-blue hover:font-bold">
+        <HashLink to={"/#about"}>About</HashLink>
+      </li>
 
-      <HashLink to={"/products"}>
-        <li className="cursor-pointer hover:text-blue hover:font-bold">
-          Products
-        </li>
-      </HashLink>
+      <li className="cursor-pointer hover:text-blue hover:font-bold">
+        <HashLink to={"/products"}>Products</HashLink>
+      </li>
     </ul>
   );
 }

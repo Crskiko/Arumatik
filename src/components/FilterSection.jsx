@@ -2,6 +2,7 @@ import Heading from "./Heading";
 import Tab from "./Tab";
 import Dropdown from "./Dropdown";
 import PropTypes from "prop-types";
+import useScrollTop from "../hooks/useScrollTop";
 
 /**
  * Component that displays filters in product list page.
@@ -25,6 +26,8 @@ function FilterSection({
   setSeries,
   isMobile
 }) {
+  useScrollTop();
+  
   return (
     <section className="h-fit">
       <div className={`${isMobile ? "pb-10" : "pb-16"} pt-32 bg-blue w-full flex justify-center`}>

@@ -26,6 +26,7 @@ function DetailSection({ product, onClick, isMobile }) {
               ? "w-full h-auto py-8 rounded-2xl"
               : "w-[40vw] h-[29rem] rounded-3xl"
           } object-contain bg-beige mb-6`}
+          loading="lazy"
         />
 
         <div className="w-full">

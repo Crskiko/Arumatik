@@ -56,8 +56,9 @@ function CardCategory({
     >
       <img
         src={img}
-        alt="category"
+        alt="category-image"
         className={`overflow-hidden object-cover ${imageBorderRadius} ${imageSize}`}
+        loading="lazy"
       />
 
       <div className={`${textColor} ${textAlignment} ${textWidth}`}>

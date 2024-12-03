@@ -23,9 +23,10 @@ function CardProduct({ product, onClick, isMobile }) {
     >
       <img
         src={`/images/${product.image}`}
-        alt={convertToSlug(product.name)}
+        alt={`${convertToSlug(product.name)}-image`}
         className={`${isMobile ? "w-40 h-32 rounded-lg" : "w-64 h-36 rounded-2xl"} object-contain 
         overflow-hidden aspect-video mb-3 bg-beige`}
+        loading="lazy"
       />
 
       <div className="flex items-center justify-between w-full">

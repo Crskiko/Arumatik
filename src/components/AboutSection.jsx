@@ -18,13 +18,18 @@ function AboutSection({ targetSection, isMobile }) {
         isMobile={isMobile}
       ></Heading>
 
-      <div className={`grid mt-10 ${isMobile ? "grid-cols-1 gap-5 mx-6" : "grid-cols-2 gap-8 xl:mx-28 mx-12"}`}>
+      <div className={`grid mt-10 ${
+        isMobile 
+          ? "grid-cols-1 gap-5 mx-6" 
+          : "grid-cols-2 gap-8 xl:mx-28 mx-12"
+        }`}
+      >
         <div
           className={`${
             isMobile
               ? "py-8 px-7 rounded-2xl"
               : "px-10 py-12 rounded-3xl"
-          } bg-white shadow-sm cursor-default transform transition duration-300 hover:scale-105"`}
+          } bg-white shadow-sm cursor-default transform transition duration-300 hover:scale-105`}
         >
           <h3 className={`${isMobile ? "text-sm mb-1" : "text-lg mb-2"} font-bold`}>
             Vision
@@ -39,7 +44,7 @@ function AboutSection({ targetSection, isMobile }) {
             isMobile
               ? "py-8 px-7 rounded-2xl"
               : "px-10 py-12 rounded-3xl"
-          } bg-white shadow-sm cursor-default transform transition duration-300 hover:scale-105"`}
+          } bg-white shadow-sm cursor-default transform transition duration-300 hover:scale-105`}
         >
           <h3 className={`${isMobile ? "text-sm mb-1" : "text-lg mb-2"} font-bold`}>
             Mission

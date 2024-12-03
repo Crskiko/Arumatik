@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-import { createContext, useContext, useMemo } from "react";
-import { data as products } from "../assets/data/product.json";
+import { createContext, useContext, useEffect, useState } from "react";
 
 /**
  * Context to store product data.
@@ -16,12 +15,28 @@ const ProductContext = createContext();
  * @returns {React.ReactNode} The wrapped children components with the provided context value.
  */
 export const ProductProvider = ({ children }) => {
-  const value = useMemo(() => {
-    return products;
-  }, [products]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/data/product.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products.");
+        }
+        
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error loading products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
-    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
+    <ProductContext.Provider value={products}>{children}</ProductContext.Provider>
   );
 };
 
