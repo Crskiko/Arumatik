@@ -77,9 +77,10 @@ project/
 ├── public/
 │   ├── icons/           # Public icons used on the website
 │   ├── images/          # Images called from JSON data
+│   └── data/            # JSON files for big data, such as product data
 ├── src/
 │   ├── assets/          # Images and other static assets
-│       └── data/        # JSON files for product, category, and benefit data
+│       └── data/        # JSON files for small data, such as category and benefit data
 │   ├── components/      # Reusable UI components
 │   ├── containers/      # Logic-focused components
 │   ├── contexts/        # React Context files
