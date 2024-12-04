@@ -22,24 +22,24 @@ function CardCategory({
   onClick,
   isMobile,
 }) {
-
   const cardDirection = reverse ? "flex-row-reverse" : "flex-row";
-  const padding = reverse
-    ? isMobile
-      ? "pl-6"
-      : "pl-9"
-    : isMobile
-    ? "pr-6"
-    : "pr-9";
-  const cardStyle = primary ? "bg-blue shadow-xl" : "bg-beige shadow-sm";
+
+  let padding;
+  if (reverse) {
+    padding = isMobile ? "pl-6" : "pl-9";
+  } else {
+    padding = isMobile ? "pr-6" : "pr-9";
+  }
+
   const borderRadius = isMobile ? "rounded-2xl" : "rounded-3xl";
-  const imageBorderRadius = reverse
-    ? isMobile
-      ? "rounded-e-2xl"
-      : "rounded-e-3xl"
-    : isMobile
-    ? "rounded-s-2xl"
-    : "rounded-s-3xl";
+  let imageBorderRadius;
+  if (reverse) {
+    imageBorderRadius = isMobile ? "rounded-e-2xl" : "rounded-e-3xl";
+  } else {
+    imageBorderRadius = isMobile ? "rounded-s-2xl" : "rounded-s-3xl";
+  }
+
+  const cardStyle = primary ? "bg-blue shadow-xl" : "bg-beige shadow-sm";
   const imageSize = isMobile ? "w-36 h-48" : "w-56 h-60";
   const textAlignment = reverse ? "text-start" : "text-end";
   const textColor = primary ? "text-white" : "text-black";

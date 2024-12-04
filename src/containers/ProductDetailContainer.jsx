@@ -23,10 +23,10 @@ function ProductDetailContainer() {
 
   const DetailSection = React.lazy(() => import("../components/DetailSection"));
 
+  useScrollTop();
+
   if (!product)
     return <ErrorMessage error={"Product not found."} isMobile={matches}></ErrorMessage>;
-
-  useScrollTop();
 
   return (
     <div>

@@ -15,11 +15,17 @@ import PropTypes from "prop-types";
 function Dropdown({ selected, options, setSeries, isMobile }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const buttonStateStyle = isOpen
-    ? `${
-        isMobile ? "rounded-t-lg" : "rounded-t-xl"
-      } bg-white border-2 border-b-0 border-beige`
-    : `${isMobile ? "rounded-lg" : "rounded-xl"} bg-beige`;
+  let borderStyle = "border-2 border-b-0 border-beige";
+  let roundedStyle;
+
+  if (isOpen) {
+    roundedStyle = isMobile ? "rounded-t-lg" : "rounded-t-xl";
+  } else {
+    roundedStyle = isMobile ? "rounded-lg" : "rounded-xl";
+    borderStyle = "bg-beige"; // Adjust this if required
+  }
+
+  const buttonStateStyle = `${roundedStyle} ${isOpen ? "bg-white" : "bg-beige"} ${borderStyle}`;
 
   return (
     <div className="relative sm:w-80 w-60">

@@ -11,14 +11,14 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element} The rendered tab component.
  */
 function Tab({ name, isActive = false, onClick, isMobile }) {
-  const textStyle = isActive
-    ? `${
-        isMobile ? "text-blue font-bold text-sm" : "text-blue font-bold text-lg"
-      }`
-    : `${isMobile ? "text-xs text-grey" : "text-base text-grey"}`;
-  const hoverTextStyle = isMobile
-    ? "group-hover:text-sm"
-    : "group-hover:text-lg";
+  const hoverTextStyle = isMobile ? "group-hover:text-sm" : "group-hover:text-lg";
+
+  let textStyle = "";
+  if (isActive) {
+    textStyle = isMobile ? "text-blue font-bold text-sm" : "text-blue font-bold text-lg";
+  } else if (!isActive) {
+    textStyle = isMobile ? "text-xs text-grey" : "text-base text-grey";
+  }
 
   return (
     <button
