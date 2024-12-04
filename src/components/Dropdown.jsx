@@ -42,9 +42,8 @@ function Dropdown({ selected, options, setSeries, isMobile }) {
           ${isMobile ? "rounded-b-lg" : "rounded-b-xl"} w-full`}
         >
           {options.map((value) => (
-            <li>
+            <li key={value}>
               <button
-                key={value}
                 className={`${
                   isMobile ? "text-xs px-4 py-2.5" : "text-sm px-6 py-3"
                 } transition-all duration-300 hover:bg-beige w-full text-start`}
