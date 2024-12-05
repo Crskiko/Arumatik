@@ -7,14 +7,16 @@ export default defineConfig({
   plugins: [
     react(),
     visualizer({
-      open: true,
+      open: false,
       filename: "stats.html",
       gzipSize: true,
       brotliSize: true,
     }),
   ],
   minify: "terser",
+  base: "./",
   build: {
+    outDir: "dist",
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
