@@ -13,9 +13,9 @@ import ArrowV2Icon from "../assets/icons/arrow-v2-icon.svg";
  */
 function HeroSection({ navigate, scroll, isMobile }) {
   return (
-    <section id="hero" className="relative">
+    <section id="hero">
       <div
-        className={`flex ${isMobile ? "flex-col px-6" : "flex-row xl:px-28 px-12"} 
+        className={`flex ${isMobile ? "flex-col px-6 mt-10" : "flex-row xl:px-28 px-12"} 
         justify-between gap-10 items-center w-full`}
       >
         <div className={isMobile ? "text-center" : "w-[34rem]"}>
@@ -50,7 +50,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
       </div>
 
       <button
-        className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-10"
+        className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-8"
         onMouseOver={scroll}
         onFocus={scroll}
       >
