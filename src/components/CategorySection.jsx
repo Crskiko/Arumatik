@@ -1,6 +1,6 @@
 import CardCategory from "./CardCategory";
 import Heading from "./Heading";
-import { data as category } from "../assets/data/category.json";
+import { data as category } from "../../public/data/category.json";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 

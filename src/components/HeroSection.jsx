@@ -38,7 +38,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
         </div>
 
         <img
-          src="/public/images/home.webp"
+          src="/images/home.webp"
           alt="hero-img"
           className={`${
             isMobile 
