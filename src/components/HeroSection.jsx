@@ -42,7 +42,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
           alt="hero-img"
           className={`${
             isMobile 
-              ? "w-60 h-60 rounded-2xl" 
+              ? "w-64 h-64 rounded-2xl" 
               : "w-[26rem] h-[26rem] rounded-[2.5rem]"
           } overflow-hidden object-cover`}
           loading="eager"
