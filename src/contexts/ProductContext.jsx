@@ -20,7 +20,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/data/product.json");
+        const response = await fetch("../../public/data/product.json");
         if (!response.ok) {
           throw new Error("Failed to fetch products.");
         }
