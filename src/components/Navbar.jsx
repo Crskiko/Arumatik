@@ -18,7 +18,7 @@ function Navbar({ isMobile }) {
         <div className="flex flex-col items-center gap-4 px-6">
           <div className="flex items-center justify-between w-full">
             <HashLink to={"/"}>
-              <img src={Logo} alt="logo" className="max-w-[90%]" />
+              <img src={Logo} alt="logo" className="max-w-[80%]" />
             </HashLink>
 
             <Button

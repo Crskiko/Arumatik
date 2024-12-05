@@ -15,15 +15,15 @@ function HeroSection({ navigate, scroll, isMobile }) {
   return (
     <section id="hero" className="relative">
       <div
-        className={`flex ${isMobile ? "flex-col px-6 gap-1" : "flex-row xl:px-28 px-12 gap-10"} 
+        className={`flex ${isMobile ? "flex-col px-6 gap-6 mt-8" : "flex-row xl:px-28 px-12 gap-10"} 
         justify-between items-center w-full`}
       >
         <div className={isMobile ? "text-center" : "w-[34rem]"}>
-          <h1 className={`${isMobile ? "text-2xl mb-4" : "text-3xl mb-5"} font-bold text-blue`}>
+          <h1 className={`${isMobile ? "text-2xl mb-2" : "text-3xl mb-5"} font-bold text-blue`}>
             Efficient, Sustainable Pallet Solutions for Every Need
           </h1>
 
-          <p className={isMobile ? "text-xs mb-6" : "text-sm mb-16"}>
+          <p className={isMobile ? "text-xs mb-4" : "text-sm mb-16"}>
             From logistics hubs to factories, we provide high-quality pallet
             racks with flexible rental and purchase options, including delivery
             and comprehensive warranties across Java.
@@ -42,7 +42,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
           alt="hero-img"
           className={`${
             isMobile 
-              ? "w-80 h-80 rounded-2xl mt-10" 
+              ? "w-52 h-52 rounded-2xl" 
               : "w-[26rem] h-[26rem] rounded-[2.5rem]"
           } overflow-hidden object-cover`}
           loading="eager"
@@ -50,7 +50,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
       </div>
 
       <button
-        className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-8"
+        className="bg-blue w-6 h-6 rounded-full flex items-center justify-center absolute bottom-5"
         onMouseOver={scroll}
         onFocus={scroll}
       >
