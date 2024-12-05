@@ -1,6 +1,6 @@
 import CardBenefit from "./CardBenefit";
 import Heading from "./Heading";
-import { data as benefit } from "../../public/data/benefit.json";
+import { data as benefit } from "../assets/data/benefit.json";
 import PropTypes from "prop-types";
 
 /**
