@@ -1,19 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { visualizer } from "rollup-plugin-visualizer";
 import { resolve } from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    visualizer({
-      open: false,
-      filename: "stats.html",
-      gzipSize: true,
-      brotliSize: true,
-    }),
-  ],
+  plugins: [react()],
   minify: "terser",
   base: "./",
   build: {
