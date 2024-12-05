@@ -20,7 +20,7 @@ function ClientSection({ isMobile }) {
 
       <div 
         className={`flex ${isMobile ? "flex-col" : "flex-row"} justify-center items-center 
-        gap-10 w-full xl:px-28 px-12 mt-12`}
+        xl:gap-16 gap-10 w-full 2xl:px-48 xl:px-28 px-12 mt-12`}
       >
         <img
           src="/images/logos/logo-garuda.webp"

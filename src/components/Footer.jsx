@@ -17,7 +17,7 @@ function Footer({ isMobile }) {
       className={`bg-white flex ${
         isMobile
           ? "flex-col justify-center items-center py-7"
-          : "flex-row justify-between py-10 xl:px-28 px-12"
+          : "flex-row justify-between py-10 2xl:px-48 xl:px-28 px-12"
       }`}
     >
       <img

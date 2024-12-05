@@ -15,7 +15,10 @@ function HeroSection({ navigate, scroll, isMobile }) {
   return (
     <section id="hero" className="relative">
       <div
-        className={`flex ${isMobile ? "flex-col px-6 gap-6 mt-8" : "flex-row xl:px-28 px-12 gap-10"} 
+        className={`flex ${
+          isMobile 
+            ? "flex-col px-6 gap-6 mt-8" 
+            : "flex-row 2xl:px-48 xl:px-28 px-12 gap-10"} 
         justify-between items-center w-full`}
       >
         <div className={isMobile ? "text-center" : "w-[34rem]"}>
@@ -43,7 +46,7 @@ function HeroSection({ navigate, scroll, isMobile }) {
           className={`${
             isMobile 
               ? "w-64 h-64 rounded-2xl" 
-              : "w-[26rem] h-[26rem] rounded-[2.5rem]"
+              : "w-[26rem] h-[26rem] rounded-[2.5rem] 2xl:w-[40rem] 2xl:h-[40rem]"
           } overflow-hidden object-cover`}
           loading="eager"
         />

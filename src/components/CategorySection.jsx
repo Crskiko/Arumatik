@@ -15,7 +15,7 @@ function CategorySection({ isMobile }) {
   const navigate = useNavigate();
 
   return (
-    <section id="product" className="h-fit my-12">
+    <section id="product" className="h-fit my-40">
       <Heading
         text="Brose Our Products"
         desc="Explore our diverse range of industrial-grade solutions—from pallets to 
